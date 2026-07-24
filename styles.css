@@ -1018,3 +1018,29 @@ body > *:not(.aurora):not(.grain):not(.scroll-progress):not(.cursor-dot):not(.cu
 .blog-term-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;
   max-width:var(--maxw); margin:0 auto; padding:14px var(--pad-x) 40px; position:relative; z-index:1; }
 .blog-term-grid .blog-term{ width:auto; }
+
+/* ==========================================================================
+   v16 — light mode is now the default; refined theme switch; polish both modes
+   ========================================================================== */
+.theme-toggle{ width:50px; height:26px; border-radius:999px; padding:3px; display:flex; align-items:center;
+  justify-content:flex-start; border:1px solid var(--glass-border); background:var(--glass-fill);
+  cursor:pointer; font-size:0; color:transparent; overflow:hidden; flex:none;
+  transition:background .3s var(--ease), border-color .25s var(--ease); }
+.theme-toggle:hover{ border-color:var(--accent); }
+.theme-toggle::before{ content:""; width:20px; height:20px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent-bright), var(--data-bright));
+  box-shadow:0 1px 3px rgba(0,0,0,.3); transform:translateX(0); transition:transform .28s var(--ease); }
+html[data-theme="light"] .theme-toggle{ background:linear-gradient(90deg, rgba(94,147,230,.20), rgba(66,197,138,.20)); }
+html[data-theme="light"] .theme-toggle::before{ transform:translateX(24px); }
+
+/* strong hero tagline emphasis */
+.tagline b{ color:var(--ink); font-weight:700; }
+
+/* light-mode polish: crisper glass, softer grid, readable navbar */
+[data-theme="light"]{ --bg:#EEF2F9; --bg-2:#FFFFFF; }
+[data-theme="light"] body{ background: radial-gradient(ellipse 70% 45% at 50% -10%, #FFFFFF, #EAEFF7 60%); }
+[data-theme="light"] .navbar{ background:linear-gradient(135deg, rgba(255,255,255,.85), rgba(255,255,255,.6)); }
+[data-theme="light"] .brand-name{ color:var(--ink); }
+[data-theme="light"] .grain{ opacity:.02; }
+[data-theme="light"] .hero h1{ background:linear-gradient(120deg, var(--ink) 55%, #3568C4 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; }

@@ -40,3 +40,13 @@ Deploy: replace your repo contents with this folder, commit, push — Netlify re
 - **Blog** — tiles are now **terminal-style**, and three real first-person stories were added:
   *How I Learned SQL, From Zero*, *How I Learned Python, From Zero*, and *From BBA to Power BI*.
   Edit them at `blog/how-i-learned-sql.html`, `blog/how-i-learned-python.html`, `blog/marketer-to-data.html`.
+
+
+## Latest
+- **Light mode is now the default** (dark still one tap away). Added a proper sliding **theme switch**;
+  both modes are tuned to look premium.
+- **Stronger hero + name SEO** — the hero now leads with your name and role, and the page title, meta
+  description, Open Graph and Person structured data all lead with "Vrushank Soni … Ahmedabad".
+  To actually rank #1 for your name: deploy, then (1) add the site to Google Search Console and submit the
+  sitemap, and (2) put the link in your LinkedIn, GitHub and Instagram bios — a unique name + those signals
+  usually takes the top spot within a couple of weeks.
