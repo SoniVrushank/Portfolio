@@ -492,7 +492,7 @@ a.hscroll-page{ text-decoration:none; color:var(--ink); display:block; }
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 
-/* spider watermark centerpiece behind the hero */
+/* spider watermark centerpiece behind the hero — reverted to the organic mascot style */
 .spider-watermark{ position:absolute; top:50%; left:50%; transform:translate(-50%,-52%); width:min(60vw,520px); opacity:.1; z-index:0; pointer-events:none; }
 .spider-watermark path, .spider-watermark line{ stroke:var(--red-bright); }
 .spider-watermark ellipse, .spider-watermark circle{ fill:var(--red-deep); }
