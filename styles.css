@@ -1044,3 +1044,52 @@ html[data-theme="light"] .theme-toggle::before{ transform:translateX(24px); }
 [data-theme="light"] .grain{ opacity:.02; }
 [data-theme="light"] .hero h1{ background:linear-gradient(120deg, var(--ink) 55%, #3568C4 100%);
   -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+
+/* ==========================================================================
+   v17 — light-mode contrast, background texture (waves + blur orbs),
+   two-column SQL block.
+   ========================================================================== */
+
+/* --- background decorative layers --- */
+.orbs{ position:fixed; inset:0; z-index:0 !important; pointer-events:none; overflow:hidden; }
+.orbs b{ position:absolute; border-radius:50%; filter:blur(72px); }
+.orbs .o1{ width:34vw; height:34vw; left:-8vw; top:6vh;  background:radial-gradient(circle, rgba(94,147,230,.30), transparent 66%); }
+.orbs .o2{ width:30vw; height:30vw; right:-6vw; top:42vh; background:radial-gradient(circle, rgba(66,197,138,.26), transparent 66%); }
+.orbs .o3{ width:26vw; height:26vw; left:34vw; bottom:-10vh; background:radial-gradient(circle, rgba(142,134,224,.20), transparent 66%); }
+.waves{ position:fixed; inset:0; z-index:0 !important; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%271200%27%20height=%27800%27%3E%3Cpath%20d=%27M-50%2C70%20C300%2C30%20700%2C110%201250%2C50%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C190%20C300%2C230%20700%2C150%201250%2C210%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C300%20C300%2C260%20700%2C340%201250%2C280%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C430%20C300%2C470%20700%2C390%201250%2C450%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C560%20C300%2C520%20700%2C600%201250%2C540%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C690%20C300%2C730%20700%2C650%201250%2C710%27%20fill=%27none%27%20stroke=%27%236E9BE8%27%20stroke-opacity=%270.12%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C760%20C400%2C500%20800%2C560%201250%2C240%27%20fill=%27none%27%20stroke=%27%234FC79A%27%20stroke-opacity=%270.10%27%20stroke-width=%271.4%27/%3E%3Cpath%20d=%27M-50%2C120%20C450%2C360%20850%2C300%201250%2C620%27%20fill=%27none%27%20stroke=%27%238E86E0%27%20stroke-opacity=%270.08%27%20stroke-width=%271.4%27/%3E%3C/svg%3E"); background-size:1200px 800px; opacity:.6; }
+[data-theme="light"] .orbs .o1{ background:radial-gradient(circle, rgba(37,99,235,.20), transparent 66%); }
+[data-theme="light"] .orbs .o2{ background:radial-gradient(circle, rgba(15,168,94,.18), transparent 66%); }
+[data-theme="light"] .orbs .o3{ background:radial-gradient(circle, rgba(124,58,237,.14), transparent 66%); }
+[data-theme="light"] .waves{ opacity:.5; }
+
+/* --- LIGHT MODE: make cards pop off the background --- */
+[data-theme="light"]{
+  --bg:#E6ECF7; --bg-2:#F1F5FC;
+  --ink:#0B1424; --ink-dim:rgba(11,20,36,.70); --ink-faint:rgba(11,20,36,.50);
+  --glass-fill:rgba(255,255,255,.92); --glass-border:rgba(24,40,74,.14);
+  --accent:#2563EB; --accent-bright:#2563EB; --blue:#2563EB; --leaf:#0FA85E; --leaf-bright:#0E9A55;
+}
+[data-theme="light"] body{ background:radial-gradient(ellipse 90% 60% at 50% -10%, #F3F7FD, #DEE6F3 70%); }
+[data-theme="light"] .glass{
+  background:linear-gradient(160deg, #FFFFFF, #F5F8FD);
+  border:1px solid rgba(24,40,74,.14);
+  box-shadow:0 8px 26px rgba(24,44,86,.12), inset 0 1px 0 rgba(255,255,255,.9);
+}
+[data-theme="light"] .glass:hover{ box-shadow:0 14px 36px rgba(24,44,86,.16); }
+[data-theme="light"] .navbar{ background:linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,255,255,.72)); border-color:rgba(24,40,74,.12); }
+[data-theme="light"] .tag, [data-theme="light"] .brand-type, [data-theme="light"] .kbadge{ background:#EEF3FB; border-color:rgba(24,40,74,.14); }
+[data-theme="light"] .skill-item.key::before{ filter:saturate(1.4); }
+[data-theme="light"] .code-panel .code-block, [data-theme="light"] .project-mock, [data-theme="light"] .term-body{ background:#F7FAFE; }
+[data-theme="light"] .grain{ opacity:.02; }
+[data-theme="light"] .hero h1{ background:linear-gradient(120deg, var(--ink) 55%, #2563EB 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+/* --- two-column SQL block --- */
+.sql-split{ display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(24px,4vw,48px); align-items:center; }
+.sql-split .code-panel{ max-width:none; margin:0; }
+.sql-note .section-kicker{ margin-bottom:12px; }
+.sql-note h3{ font-family:var(--font-display); font-weight:700; font-size:clamp(20px,2.4vw,28px);
+  letter-spacing:-0.02em; margin:0 0 14px; line-height:1.15; }
+.sql-note .plain-caption{ max-width:44ch; margin-top:0; font-size:14.5px; }
+@media (max-width:820px){ .sql-split{ grid-template-columns:1fr; } }

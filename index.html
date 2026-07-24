@@ -63,6 +63,8 @@
 <div class="scroll-progress" aria-hidden="true"></div>
 <div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
 <div class="bg-grid" aria-hidden="true"></div>
+<div class="orbs" aria-hidden="true"><b class="o1"></b><b class="o2"></b><b class="o3"></b></div>
+<div class="waves" aria-hidden="true"></div>
 <div class="grain"></div>
 
 <nav class="glass navbar" aria-label="Primary">
@@ -175,21 +177,27 @@
   </div>
 </section>
 
-<!-- SQL showcase panel -->
+<!-- SQL showcase panel — two columns -->
 <section class="section reveal">
-  <div class="glass code-panel">
-    <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">campaign_check.sql</span></div>
-    <div class="code-block">
-      <span class="code-line"><span class="c-comment">-- which channel actually converts this week?</span></span>
-      <span class="code-line"><span class="c-kw">SELECT</span> platform,</span>
-      <span class="code-line">       <span class="c-kw">ROUND</span>(<span class="c-num">100.0</span> * clicks / impressions, <span class="c-num">2</span>) <span class="c-kw">AS</span> ctr,</span>
-      <span class="code-line">       <span class="c-kw">ROUND</span>(revenue / <span class="c-kw">NULLIF</span>(spend, <span class="c-num">0</span>), <span class="c-num">2</span>) <span class="c-kw">AS</span> roas</span>
-      <span class="code-line"><span class="c-kw">FROM</span> ad_campaigns</span>
-      <span class="code-line"><span class="c-kw">GROUP BY</span> platform</span>
-      <span class="code-line"><span class="c-kw">ORDER BY</span> roas <span class="c-kw">DESC</span>;</span>
+  <div class="sql-split">
+    <div class="glass code-panel">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">campaign_check.sql</span></div>
+      <div class="code-block">
+        <span class="code-line"><span class="c-comment">-- which channel actually converts this week?</span></span>
+        <span class="code-line"><span class="c-kw">SELECT</span> platform,</span>
+        <span class="code-line">       <span class="c-kw">ROUND</span>(<span class="c-num">100.0</span> * clicks / impressions, <span class="c-num">2</span>) <span class="c-kw">AS</span> ctr,</span>
+        <span class="code-line">       <span class="c-kw">ROUND</span>(revenue / <span class="c-kw">NULLIF</span>(spend, <span class="c-num">0</span>), <span class="c-num">2</span>) <span class="c-kw">AS</span> roas</span>
+        <span class="code-line"><span class="c-kw">FROM</span> ad_campaigns</span>
+        <span class="code-line"><span class="c-kw">GROUP BY</span> platform</span>
+        <span class="code-line"><span class="c-kw">ORDER BY</span> roas <span class="c-kw">DESC</span>;</span>
+      </div>
+    </div>
+    <div class="sql-note">
+      <p class="section-kicker">How I read the numbers</p>
+      <h3>The check before the spend.</h3>
+      <p class="plain-caption"><b>In plain English:</b> a query like this shows whether Meta or Google is really earning its budget this week — before the money gets spent finding out the hard way. Data first, then the creative.</p>
     </div>
   </div>
-  <p class="plain-caption"><b>In plain English:</b> a check like this shows whether Meta or Google is really earning its budget this week — before the money gets spent finding out the hard way.</p>
 </section>
 
 <!-- ===================== 03 EXPERIENCE ===================== -->

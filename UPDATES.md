@@ -50,3 +50,11 @@ Deploy: replace your repo contents with this folder, commit, push — Netlify re
   To actually rank #1 for your name: deploy, then (1) add the site to Google Search Console and submit the
   sitemap, and (2) put the link in your LinkedIn, GitHub and Instagram bios — a unique name + those signals
   usually takes the top spot within a couple of weeks.
+
+
+## Light-mode polish
+- **More contrast in light mode** — cards now sit on a softly tinted background with real borders and shadows,
+  so boxes and text no longer blend into the white. Accents are a touch more saturated for pop.
+- **Background texture** — added subtle curvy line-work and soft blurred colour orbs behind the content
+  (minimal, premium, works in both modes).
+- **SQL block is now two columns** — the query on the left, the plain-English explanation on the right.
