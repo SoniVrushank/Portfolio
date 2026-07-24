@@ -19,8 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Cpath d='M9 9 L16 23 L23 9' stroke='%23E14B3D' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,10 +61,12 @@
 </head>
 <body>
 
+<div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
+<div class="bg-grid" aria-hidden="true"></div>
 <div class="grain"></div>
 
 <nav class="glass navbar">
-  <a class="brand" href="../index.html"><span class="brand-mark"></span><span class="brand-name">Vrushank Soni</span></a>
+  <a class="brand" href="../index.html" aria-label="Vrushank Soni — home"><img class="brand-logo-svg" src="../assets/logo.svg" alt="" width="26" height="26"><span class="brand-name">Vrushank Soni</span></a>
   <div class="nav-links"><a href="../projects.html">Projects</a><a href="../index.html#work">Work</a><a href="../index.html#certificates">Certificates</a><a href="index.html">Blog</a><a href="../index.html#contact">Contact</a></div>
   <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">☾</button>
   <a class="glass-btn" href="../index.html#contact">Let's talk</a>
@@ -124,7 +126,7 @@
     <p class="author-name">Vrushank Soni — let's connect</p>
     <p class="author-bio">Data Analyst &amp; Digital Marketer — Power BI, SQL and Python, plus SEO and paid ads.</p>
     <div class="author-links">
-      <a class="glass-btn ghost" href="mailto:sonivrushank9@gmail.com">Email</a>
+      <a class="glass-btn ghost" href="mailto:vrushank.soni@outlook.com">Email</a>
       <a class="glass-btn ghost" href="https://linkedin.com/in/vrushanksoni" target="_blank" rel="noopener">LinkedIn</a>
       <a class="glass-btn ghost" href="https://instagram.com/vrushh_98" target="_blank" rel="noopener">Instagram</a>
       <a class="glass-btn ghost" href="https://wa.me/919429428270?text=Hi%20Vrushank!%20I%27d%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
@@ -164,8 +166,6 @@
 
 <footer class="footer-note"><p><a class="back-link" href="../index.html">&larr; Back to the portfolio</a></p><p style="margin-top:10px;">Built by Vrushank Soni — Data Analyst &amp; Digital Marketer.</p></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../main.js" defer></script>
 </body>
 </html>

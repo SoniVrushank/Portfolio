@@ -5,9 +5,9 @@
    ========================================================================== */
 
 :root{
-  --bg: #050505;
-  --bg-2: #0A0A0A;
-  --ink: #FFFFFF;
+  --bg: #05070E;
+  --bg-2: #0A0F1C;
+  --ink: #EAF1F8;
   --ink-dim: rgba(255,255,255,.62);
   --ink-faint: rgba(255,255,255,.4);
 
@@ -16,10 +16,10 @@
   --leaf-bright: #7CFFB2;
   --leaf-soft: rgba(47,209,116,.14);
 
-  --red-deep: #8E2A21;
-  --red: #E14B3D;
-  --red-bright: #FF6B57;
-  --red-soft: rgba(225,75,61,.15);
+  --red-deep: #1E5FBF;
+  --red: #3B82F6;
+  --red-bright: #6BA5FF;
+  --red-soft: rgba(59,130,246,.14);
 
   --orange: #F2A33D;
 
@@ -40,13 +40,15 @@
 }
 
 [data-theme="light"]{
-  --bg: #F7F3EF;
+  --bg: #EDF1F8;
   --bg-2: #FFFFFF;
-  --ink: #17110F;
-  --ink-dim: rgba(23,17,15,.66);
-  --ink-faint: rgba(23,17,15,.46);
-  --glass-fill: rgba(20,10,8,.05);
-  --glass-border: rgba(20,10,8,.14);
+  --ink: #0D1526;
+  --ink-dim: rgba(13,21,38,.66);
+  --ink-faint: rgba(13,21,38,.44);
+  --glass-fill: rgba(13,21,38,.045);
+  --glass-border: rgba(13,21,38,.12);
+  --red-deep:#1D4ED8; --red:#2563EB; --red-bright:#2563EB; --red-soft:rgba(37,99,235,.10);
+  --leaf-bright:#12915A; --amber:#B4791A;
 }
 
 *{ box-sizing:border-box; }
@@ -861,3 +863,158 @@ body > *:not(.aurora):not(.grain):not(.scroll-progress):not(.cursor-dot):not(.cu
 
 /* refined glass hover on cards */
 .project-card, .brand-slide, .cert-card, .ach-card, .exp-card, .skill-col, .metric-card{ transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease); }
+
+
+/* ==========================================================================
+   v14 — blue/green palette, galaxy backdrop, compact premium, skill highlights,
+   VS logo. Removes aurora/cursor. Lighter, faster (no smooth-scroll lib).
+   ========================================================================== */
+
+/* retire prior heavy layers */
+.aurora, .cursor-dot, .cursor-ring{ display:none !important; }
+.glass{ backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); }
+
+/* accents: blue primary, green secondary */
+:root{ --accent:var(--blue); --accent-bright:#7FB0FF; --data:var(--leaf); --data-bright:var(--leaf-bright);
+  --blue:#4C8DFF; --cyan:#38BDF8; --violet:#8B5CF6; --space-section:clamp(48px,6.5vw,88px); }
+[data-theme="light"]{ --accent:#2563EB; --accent-bright:#2563EB; }
+
+/* galaxy background — minimal starfield + soft nebula */
+.galaxy{ position:fixed; inset:0; z-index:0 !important; pointer-events:none; overflow:hidden;
+  background:
+   radial-gradient(58vw 42vw at 80% -10%, rgba(76,141,255,.15), transparent 60%),
+   radial-gradient(50vw 42vw at 6% 14%, rgba(47,209,116,.11), transparent 60%),
+   radial-gradient(44vw 34vw at 52% 112%, rgba(139,92,246,.09), transparent 62%); }
+.galaxy .stars{ position:absolute; inset:-60%; background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27800%27 height=%27800%27%3E%3Ccircle cx=%27259.1%27 cy=%27120.7%27 r=%271.1%27 fill=%27white%27 opacity=%270.39%27/%3E%3Ccircle cx=%27428.7%27 cy=%27292.6%27 r=%270.6%27 fill=%27white%27 opacity=%270.65%27/%3E%3Ccircle cx=%2730.0%27 cy=%27346.9%27 r=%270.6%27 fill=%27white%27 opacity=%270.4%27/%3E%3Ccircle cx=%27339.6%27 cy=%27661.5%27 r=%270.6%27 fill=%27white%27 opacity=%270.48%27/%3E%3Ccircle cx=%27501.9%27 cy=%27758.2%27 r=%271.0%27 fill=%27white%27 opacity=%270.59%27/%3E%3Ccircle cx=%27781.0%27 cy=%2737.3%27 r=%271.3%27 fill=%27white%27 opacity=%270.52%27/%3E%3Ccircle cx=%27115.4%27 cy=%2794.2%27 r=%270.8%27 fill=%27white%27 opacity=%270.84%27/%3E%3Ccircle cx=%27144.6%27 cy=%27465.3%27 r=%271.1%27 fill=%27white%27 opacity=%270.57%27/%3E%3Ccircle cx=%27438.2%27 cy=%2750.2%27 r=%270.6%27 fill=%27white%27 opacity=%270.47%27/%3E%3Ccircle cx=%27544.3%27 cy=%27342.1%27 r=%270.8%27 fill=%27white%27 opacity=%270.7%27/%3E%3Ccircle cx=%27362.5%27 cy=%27239.8%27 r=%271.2%27 fill=%27white%27 opacity=%270.77%27/%3E%3Ccircle cx=%27195.3%27 cy=%27459.5%27 r=%271.0%27 fill=%27white%27 opacity=%270.88%27/%3E%3Ccircle cx=%27583.6%27 cy=%27230.4%27 r=%271.4%27 fill=%27white%27 opacity=%270.42%27/%3E%3Ccircle cx=%27334.5%27 cy=%27605.7%27 r=%270.6%27 fill=%27white%27 opacity=%270.64%27/%3E%3Ccircle cx=%2731.4%27 cy=%27534.6%27 r=%271.2%27 fill=%27white%27 opacity=%270.69%27/%3E%3Ccircle cx=%27700.4%27 cy=%27251.0%27 r=%271.1%27 fill=%27white%27 opacity=%270.71%27/%3E%3Ccircle cx=%27463.9%27 cy=%27365.0%27 r=%271.3%27 fill=%27white%27 opacity=%270.92%27/%3E%3Ccircle cx=%27379.3%27 cy=%27531.3%27 r=%270.6%27 fill=%27white%27 opacity=%270.77%27/%3E%3Ccircle cx=%27517.7%27 cy=%27794.5%27 r=%271.2%27 fill=%27white%27 opacity=%270.52%27/%3E%3Ccircle cx=%27308.6%27 cy=%27534.9%27 r=%270.5%27 fill=%27white%27 opacity=%270.63%27/%3E%3Ccircle cx=%27134.4%27 cy=%2793.7%27 r=%270.6%27 fill=%27white%27 opacity=%270.81%27/%3E%3Ccircle cx=%27103.5%27 cy=%27198.1%27 r=%270.9%27 fill=%27white%27 opacity=%270.87%27/%3E%3Ccircle cx=%2764.5%27 cy=%27359.3%27 r=%271.0%27 fill=%27white%27 opacity=%270.88%27/%3E%3Ccircle cx=%27655.4%27 cy=%27691.2%27 r=%270.8%27 fill=%27white%27 opacity=%270.6%27/%3E%3Ccircle cx=%27287.0%27 cy=%27707.4%27 r=%271.4%27 fill=%27white%27 opacity=%270.44%27/%3E%3Ccircle cx=%27141.0%27 cy=%27185.6%27 r=%270.7%27 fill=%27white%27 opacity=%270.64%27/%3E%3Ccircle cx=%27471.3%27 cy=%27210.2%27 r=%270.5%27 fill=%27white%27 opacity=%270.6%27/%3E%3Ccircle cx=%27295.4%27 cy=%27453.1%27 r=%271.4%27 fill=%27white%27 opacity=%270.76%27/%3E%3Ccircle cx=%27412.4%27 cy=%27494.1%27 r=%271.1%27 fill=%27white%27 opacity=%270.38%27/%3E%3Ccircle cx=%27719.6%27 cy=%27624.0%27 r=%271.3%27 fill=%27white%27 opacity=%270.83%27/%3E%3Ccircle cx=%27313.9%27 cy=%27319.2%27 r=%270.6%27 fill=%27white%27 opacity=%270.73%27/%3E%3Ccircle cx=%2749.8%27 cy=%2753.9%27 r=%270.7%27 fill=%27white%27 opacity=%270.45%27/%3E%3Ccircle cx=%27272.0%27 cy=%2742.1%27 r=%270.5%27 fill=%27white%27 opacity=%270.44%27/%3E%3Ccircle cx=%2781.2%27 cy=%27290.9%27 r=%270.5%27 fill=%27white%27 opacity=%270.87%27/%3E%3Ccircle cx=%27491.3%27 cy=%27118.8%27 r=%270.7%27 fill=%27white%27 opacity=%270.56%27/%3E%3Ccircle cx=%27291.3%27 cy=%2798.3%27 r=%271.3%27 fill=%27white%27 opacity=%270.95%27/%3E%3Ccircle cx=%27372.8%27 cy=%27387.1%27 r=%270.6%27 fill=%27white%27 opacity=%270.41%27/%3E%3Ccircle cx=%27274.1%27 cy=%27211.8%27 r=%271.2%27 fill=%27white%27 opacity=%270.45%27/%3E%3Ccircle cx=%2718.5%27 cy=%27760.8%27 r=%271.0%27 fill=%27white%27 opacity=%270.44%27/%3E%3Ccircle cx=%27434.5%27 cy=%2721.6%27 r=%271.0%27 fill=%27white%27 opacity=%270.94%27/%3E%3Ccircle cx=%27690.7%27 cy=%27557.0%27 r=%270.7%27 fill=%27white%27 opacity=%270.57%27/%3E%3Ccircle cx=%27133.6%27 cy=%27617.6%27 r=%271.0%27 fill=%27white%27 opacity=%270.82%27/%3E%3Ccircle cx=%27263.7%27 cy=%27178.4%27 r=%271.2%27 fill=%27white%27 opacity=%270.94%27/%3E%3Ccircle cx=%27682.1%27 cy=%27644.9%27 r=%271.2%27 fill=%27white%27 opacity=%270.79%27/%3E%3Ccircle cx=%27181.4%27 cy=%27414.1%27 r=%270.8%27 fill=%27white%27 opacity=%270.37%27/%3E%3Ccircle cx=%2722.3%27 cy=%27223.5%27 r=%270.7%27 fill=%27white%27 opacity=%270.77%27/%3E%3Ccircle cx=%27765.2%27 cy=%27357.8%27 r=%271.3%27 fill=%27white%27 opacity=%270.94%27/%3E%3Ccircle cx=%27764.0%27 cy=%27291.7%27 r=%270.7%27 fill=%27white%27 opacity=%270.49%27/%3E%3Ccircle cx=%27157.4%27 cy=%27163.5%27 r=%271.1%27 fill=%27white%27 opacity=%270.89%27/%3E%3Ccircle cx=%27672.3%27 cy=%27383.6%27 r=%271.1%27 fill=%27white%27 opacity=%270.83%27/%3E%3Ccircle cx=%2767.8%27 cy=%27528.5%27 r=%271.3%27 fill=%27white%27 opacity=%270.82%27/%3E%3Ccircle cx=%27600.1%27 cy=%27382.4%27 r=%270.7%27 fill=%27white%27 opacity=%270.82%27/%3E%3Ccircle cx=%27266.0%27 cy=%27640.7%27 r=%271.4%27 fill=%27white%27 opacity=%270.59%27/%3E%3Ccircle cx=%27321.1%27 cy=%27757.4%27 r=%271.2%27 fill=%27white%27 opacity=%270.45%27/%3E%3Ccircle cx=%27101.6%27 cy=%27120.9%27 r=%271.3%27 fill=%27white%27 opacity=%270.83%27/%3E%3Ccircle cx=%27116.9%27 cy=%27661.2%27 r=%271.4%27 fill=%27white%27 opacity=%270.74%27/%3E%3Ccircle cx=%27280.3%27 cy=%27438.9%27 r=%270.6%27 fill=%27white%27 opacity=%270.36%27/%3E%3Ccircle cx=%27776.7%27 cy=%27519.7%27 r=%271.0%27 fill=%27white%27 opacity=%270.91%27/%3E%3Ccircle cx=%27347.0%27 cy=%27697.4%27 r=%271.2%27 fill=%27white%27 opacity=%270.48%27/%3E%3Ccircle cx=%27201.5%27 cy=%27234.4%27 r=%270.7%27 fill=%27white%27 opacity=%270.7%27/%3E%3Ccircle cx=%27207.5%27 cy=%27335.2%27 r=%270.6%27 fill=%27white%27 opacity=%270.9%27/%3E%3Ccircle cx=%27283.0%27 cy=%27366.5%27 r=%271.0%27 fill=%27white%27 opacity=%270.89%27/%3E%3Ccircle cx=%27336.5%27 cy=%27734.2%27 r=%271.0%27 fill=%27white%27 opacity=%270.67%27/%3E%3Ccircle cx=%27418.8%27 cy=%2715.0%27 r=%270.9%27 fill=%27white%27 opacity=%270.46%27/%3E%3Ccircle cx=%273.1%27 cy=%27639.3%27 r=%270.7%27 fill=%27white%27 opacity=%270.63%27/%3E%3Ccircle cx=%27580.2%27 cy=%27445.2%27 r=%270.8%27 fill=%27white%27 opacity=%270.66%27/%3E%3Ccircle cx=%27444.4%27 cy=%27627.4%27 r=%270.6%27 fill=%27white%27 opacity=%270.69%27/%3E%3Ccircle cx=%27198.8%27 cy=%27221.5%27 r=%271.2%27 fill=%27white%27 opacity=%270.65%27/%3E%3Ccircle cx=%27449.4%27 cy=%27608.0%27 r=%271.3%27 fill=%27white%27 opacity=%270.62%27/%3E%3Ccircle cx=%27490.0%27 cy=%27404.4%27 r=%271.0%27 fill=%27white%27 opacity=%270.77%27/%3E%3C/svg%3E"); background-size:800px 800px;
+  opacity:.55; animation:twinkleA 7s ease-in-out infinite alternate, drift 140s linear infinite; }
+.galaxy .stars.s2{ background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27800%27 height=%27800%27%3E%3Ccircle cx=%27361.9%27 cy=%27426.6%27 r=%270.7%27 fill=%27white%27 opacity=%270.91%27/%3E%3Ccircle cx=%27559.4%27 cy=%27701.2%27 r=%271.0%27 fill=%27white%27 opacity=%270.51%27/%3E%3Ccircle cx=%27447.6%27 cy=%27754.6%27 r=%270.9%27 fill=%27white%27 opacity=%270.43%27/%3E%3Ccircle cx=%2797.3%27 cy=%27353.7%27 r=%270.5%27 fill=%27white%27 opacity=%270.49%27/%3E%3Ccircle cx=%2758.5%27 cy=%27535.6%27 r=%270.9%27 fill=%27white%27 opacity=%270.89%27/%3E%3Ccircle cx=%27123.6%27 cy=%27572.9%27 r=%270.8%27 fill=%27white%27 opacity=%270.44%27/%3E%3Ccircle cx=%27706.3%27 cy=%27774.0%27 r=%270.6%27 fill=%27white%27 opacity=%270.92%27/%3E%3Ccircle cx=%27318.6%27 cy=%27389.8%27 r=%271.0%27 fill=%27white%27 opacity=%270.85%27/%3E%3Ccircle cx=%27129.2%27 cy=%27345.2%27 r=%270.8%27 fill=%27white%27 opacity=%270.55%27/%3E%3Ccircle cx=%27156.6%27 cy=%27254.8%27 r=%270.9%27 fill=%27white%27 opacity=%270.36%27/%3E%3Ccircle cx=%27443.2%27 cy=%27352.4%27 r=%270.5%27 fill=%27white%27 opacity=%270.55%27/%3E%3Ccircle cx=%27499.1%27 cy=%27409.8%27 r=%270.5%27 fill=%27white%27 opacity=%270.94%27/%3E%3Ccircle cx=%27630.7%27 cy=%27777.4%27 r=%270.6%27 fill=%27white%27 opacity=%270.51%27/%3E%3Ccircle cx=%2731.7%27 cy=%27623.2%27 r=%270.6%27 fill=%27white%27 opacity=%270.43%27/%3E%3Ccircle cx=%27337.8%27 cy=%27729.1%27 r=%270.9%27 fill=%27white%27 opacity=%270.51%27/%3E%3Ccircle cx=%27119.5%27 cy=%27735.3%27 r=%270.8%27 fill=%27white%27 opacity=%270.77%27/%3E%3Ccircle cx=%2771.6%27 cy=%2746.0%27 r=%270.8%27 fill=%27white%27 opacity=%270.61%27/%3E%3Ccircle cx=%2757.9%27 cy=%27750.7%27 r=%270.8%27 fill=%27white%27 opacity=%270.83%27/%3E%3Ccircle cx=%2767.0%27 cy=%27685.0%27 r=%270.5%27 fill=%27white%27 opacity=%270.87%27/%3E%3Ccircle cx=%27363.0%27 cy=%27271.3%27 r=%270.8%27 fill=%27white%27 opacity=%270.91%27/%3E%3Ccircle cx=%27214.3%27 cy=%27103.4%27 r=%270.8%27 fill=%27white%27 opacity=%270.49%27/%3E%3Ccircle cx=%2787.6%27 cy=%27129.2%27 r=%270.5%27 fill=%27white%27 opacity=%270.47%27/%3E%3Ccircle cx=%27249.6%27 cy=%27244.0%27 r=%270.9%27 fill=%27white%27 opacity=%270.52%27/%3E%3Ccircle cx=%27400.1%27 cy=%27142.3%27 r=%270.7%27 fill=%27white%27 opacity=%270.36%27/%3E%3Ccircle cx=%27200.4%27 cy=%2712.3%27 r=%270.9%27 fill=%27white%27 opacity=%270.68%27/%3E%3Ccircle cx=%27151.6%27 cy=%27379.8%27 r=%271.0%27 fill=%27white%27 opacity=%270.41%27/%3E%3Ccircle cx=%27655.1%27 cy=%27345.7%27 r=%270.7%27 fill=%27white%27 opacity=%270.85%27/%3E%3Ccircle cx=%27314.5%27 cy=%27405.3%27 r=%270.8%27 fill=%27white%27 opacity=%270.94%27/%3E%3Ccircle cx=%27274.2%27 cy=%27665.8%27 r=%270.9%27 fill=%27white%27 opacity=%270.73%27/%3E%3Ccircle cx=%27323.8%27 cy=%27278.0%27 r=%270.5%27 fill=%27white%27 opacity=%270.43%27/%3E%3Ccircle cx=%2756.6%27 cy=%27592.7%27 r=%270.6%27 fill=%27white%27 opacity=%270.45%27/%3E%3Ccircle cx=%2767.6%27 cy=%27673.0%27 r=%270.9%27 fill=%27white%27 opacity=%270.75%27/%3E%3Ccircle cx=%27225.5%27 cy=%27193.8%27 r=%270.6%27 fill=%27white%27 opacity=%270.63%27/%3E%3Ccircle cx=%27126.0%27 cy=%27356.7%27 r=%270.6%27 fill=%27white%27 opacity=%270.93%27/%3E%3Ccircle cx=%27778.1%27 cy=%27437.7%27 r=%270.6%27 fill=%27white%27 opacity=%270.93%27/%3E%3Ccircle cx=%27247.6%27 cy=%27285.3%27 r=%270.5%27 fill=%27white%27 opacity=%270.58%27/%3E%3Ccircle cx=%27379.7%27 cy=%27402.2%27 r=%270.6%27 fill=%27white%27 opacity=%270.65%27/%3E%3Ccircle cx=%274.0%27 cy=%27211.3%27 r=%270.5%27 fill=%27white%27 opacity=%270.59%27/%3E%3Ccircle cx=%2733.3%27 cy=%2718.0%27 r=%270.7%27 fill=%27white%27 opacity=%270.49%27/%3E%3Ccircle cx=%27468.5%27 cy=%27423.4%27 r=%270.9%27 fill=%27white%27 opacity=%270.74%27/%3E%3Ccircle cx=%27572.8%27 cy=%27703.3%27 r=%270.7%27 fill=%27white%27 opacity=%270.55%27/%3E%3Ccircle cx=%27787.8%27 cy=%27119.6%27 r=%270.9%27 fill=%27white%27 opacity=%270.74%27/%3E%3Ccircle cx=%2735.0%27 cy=%27668.2%27 r=%270.9%27 fill=%27white%27 opacity=%270.73%27/%3E%3Ccircle cx=%27587.1%27 cy=%27649.8%27 r=%270.6%27 fill=%27white%27 opacity=%270.66%27/%3E%3Ccircle cx=%27403.5%27 cy=%27668.0%27 r=%270.9%27 fill=%27white%27 opacity=%270.85%27/%3E%3C/svg%3E"); background-size:560px 560px; opacity:.32;
+  animation:twinkleB 11s ease-in-out infinite alternate, drift 240s linear infinite reverse; }
+@keyframes twinkleA{ from{opacity:.35} to{opacity:.65} }
+@keyframes twinkleB{ from{opacity:.2} to{opacity:.45} }
+@keyframes drift{ to{ transform:translateY(-60px); } }
+[data-theme="light"] .galaxy{ background:
+   radial-gradient(58vw 42vw at 80% -10%, rgba(37,99,235,.08), transparent 60%),
+   radial-gradient(50vw 42vw at 6% 14%, rgba(18,145,90,.07), transparent 60%); }
+[data-theme="light"] .galaxy .stars{ display:none; }
+@media (prefers-reduced-motion: reduce){ .galaxy .stars{ animation:none !important; } }
+
+/* keep content above galaxy */
+.navbar{ z-index:20; } main, footer{ position:relative; z-index:1; }
+
+/* VS brand logo */
+.brand{ gap:11px; }
+.brand-logo-svg{ width:26px; height:26px; display:block; }
+.brand-mark{ display:none; }
+.brand-name{ font-family:var(--font-display); font-weight:600; font-size:14px; color:var(--ink); letter-spacing:-0.01em; }
+
+/* primary/secondary buttons in blue→green */
+.glass-btn{ background:linear-gradient(135deg,#4C8DFF,#2FD174); color:#05131a; }
+.glass-btn.primary{ background:linear-gradient(135deg,#4C8DFF,#2FD174); color:#05131a;
+  box-shadow:0 8px 22px rgba(76,141,255,.26); }
+.glass-btn.secondary{ background:var(--glass-fill); color:var(--ink); border:1px solid var(--glass-border); }
+.glass-btn.email{ background:linear-gradient(135deg,#4C8DFF,#2FD174); color:#05131a; }
+.glass-btn.whatsapp{ background:linear-gradient(135deg,#25D366,#1da851); color:#04150c; }
+.glass-btn.linkedin{ background:linear-gradient(135deg,#0A66C2,#084d95); color:#fff; }
+.glass-btn.github{ background:linear-gradient(135deg,#2b2b2b,#111); color:#fff; }
+.glass-btn.instagram{ background:linear-gradient(135deg,#8B5CF6,#4C8DFF); color:#fff; }
+
+/* skills — highlight the key skill per sector with its own colour */
+.skill-col .col-head{ color:var(--hl, var(--accent-bright)); }
+.skill-col .col-head::before{ background:var(--hl, var(--data)); }
+.skill-item.key{ color:var(--ink); font-weight:600; }
+.skill-item.key::before{ width:7px; height:7px; background:var(--hl); box-shadow:0 0 10px var(--hl); }
+.skill-item .kbadge{ margin-left:auto; font-family:var(--font-mono); font-size:9px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--hl); border:1px solid var(--hl); opacity:.55; border-radius:999px; padding:2px 7px; }
+.skill-item{ justify-content:flex-start; }
+.skill-item.key{ display:flex; align-items:center; }
+
+/* certificates — show real images, card is a link to full cert */
+.cert-card{ text-decoration:none; color:inherit; }
+.cert-frame{ aspect-ratio:1.55/1; background:#0b1220; }
+[data-theme="light"] .cert-frame{ background:#eef2f8; }
+.cert-img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+.cert-frame .cert-open{ position:absolute; top:10px; right:10px; font-family:var(--font-mono); font-size:10px;
+  color:#fff; background:rgba(5,7,14,.55); border:1px solid rgba(255,255,255,.2); padding:5px 10px; border-radius:999px;
+  opacity:0; transition:opacity .3s var(--ease); backdrop-filter:blur(6px); }
+.cert-card:hover .cert-frame .cert-open{ opacity:1; }
+.cert-card:hover{ transform:translateY(-4px); }
+
+/* compact rhythm + premium tightening */
+.section-heading{ letter-spacing:-0.02em; }
+.hero{ padding-top:150px; }
+.footer-subcredit{ color:var(--ink-faint); }
+
+/* light-mode: brand name + code contrast already handled; ensure galaxy text legible */
+[data-theme="light"] .glass{ box-shadow:0 10px 30px rgba(13,21,38,.08), inset 0 1px 0 rgba(255,255,255,.6); }
+
+/* JS-gated reveals (visible if JS/observer absent) */
+.js .reveal{ opacity:0; transform:translateY(22px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.js .reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .js .reveal{ opacity:1 !important; transform:none !important; } }
+
+/* achievement cards as links + cert frame open affordance */
+.ach-card{ text-decoration:none; color:inherit; }
+.ach-foot{ margin-top:auto; padding-top:6px; font-family:var(--font-mono); font-size:11px; color:var(--accent-bright);
+  display:inline-flex; align-items:center; gap:6px; }
+.cert-frame{ position:relative; }
+
+/* ==========================================================================
+   v15 — softer minimal palette, background grid element, terminal blog tiles,
+   AI skill sector. Less "pop", more calm premium.
+   ========================================================================== */
+
+/* soften accents (less saturated, slightly lighter) */
+:root{
+  --blue:#5E93E6; --accent:var(--blue); --accent-bright:#8FB4F0;
+  --leaf:#42C58A; --leaf-bright:#78DBA9; --data:var(--leaf); --data-bright:var(--leaf-bright);
+  --cyan:#5AB6E6; --violet:#8E86E0;
+}
+[data-theme="light"]{ --accent:#3568C4; --accent-bright:#3568C4; --blue:#3568C4; --leaf-bright:#178A58; }
+
+/* calmer galaxy (lighter, less colour) */
+.galaxy{ background:
+   radial-gradient(56vw 42vw at 80% -12%, rgba(94,147,230,.09), transparent 62%),
+   radial-gradient(48vw 40vw at 6% 16%, rgba(66,197,138,.07), transparent 62%),
+   radial-gradient(40vw 32vw at 52% 114%, rgba(142,134,224,.055), transparent 64%); }
+.galaxy .stars{ opacity:.4; } .galaxy .stars.s2{ opacity:.22; }
+[data-theme="light"] .galaxy{ background:
+   radial-gradient(56vw 42vw at 80% -12%, rgba(53,104,196,.05), transparent 62%),
+   radial-gradient(48vw 40vw at 6% 16%, rgba(23,138,88,.045), transparent 62%); }
+
+/* subtle background grid element — faded toward edges */
+.bg-grid{ position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size:66px 66px;
+  -webkit-mask-image:radial-gradient(ellipse 78% 62% at 50% 34%, #000 38%, transparent 84%);
+  mask-image:radial-gradient(ellipse 78% 62% at 50% 34%, #000 38%, transparent 84%); }
+[data-theme="light"] .bg-grid{ background-image:
+    linear-gradient(rgba(13,21,38,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13,21,38,.045) 1px, transparent 1px); }
+
+/* softer button + glow intensity */
+.glass-btn.primary{ box-shadow:0 8px 20px rgba(94,147,230,.18); }
+.eyebrow .dot, .pip{ box-shadow:0 0 8px rgba(120,219,169,.55); }
+
+/* ---- terminal-style blog tiles ---- */
+.blog-term{ width:min(360px,84vw); padding:0; overflow:hidden; text-decoration:none; color:inherit;
+  display:flex; flex-direction:column; transition:transform .35s var(--ease), border-color .35s var(--ease); }
+.blog-term:hover{ transform:translateY(-5px); }
+.blog-term .chrome-bar{ padding:11px 14px; }
+.term-body{ padding:15px 17px 18px; font-family:var(--font-mono); }
+.term-body .ln{ display:block; font-size:12px; line-height:1.7; }
+.term-body .c-comment{ color:var(--ink-faint); font-style:italic; }
+.term-body .c-kw{ color:var(--accent-bright); }
+.bt-tag{ display:inline-block; margin:8px 0 4px; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--data-bright); border:1px solid var(--glass-border); border-radius:999px; padding:3px 9px; }
+.bt-title{ font-family:var(--font-display); font-weight:600; font-size:15.5px; letter-spacing:-0.01em;
+  margin:8px 0 6px; color:var(--ink); line-height:1.3; }
+.bt-desc{ font-family:var(--font-body); font-size:12.5px; color:var(--ink-dim); line-height:1.55; }
+.bt-foot{ margin-top:12px; font-family:var(--font-mono); font-size:11px; color:var(--accent-bright);
+  display:inline-flex; align-items:center; gap:6px; }
+
+/* blog index — terminal tiles in a responsive grid */
+.blog-term-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px;
+  max-width:var(--maxw); margin:0 auto; padding:14px var(--pad-x) 40px; position:relative; z-index:1; }
+.blog-term-grid .blog-term{ width:auto; }

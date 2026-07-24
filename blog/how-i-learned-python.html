@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Learned Python, Starting From Absolute Zero | Vrushank Soni</title>
+<meta name="description" content="From print('hello') to cleaning real datasets with pandas — the honest story of a marketer teaching himself Python.">
+<meta name="author" content="Vrushank Soni">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#05070E">
+<link rel="canonical" href="https://vrushanksoni.netlify.app/blog/how-i-learned-python.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How I Learned Python, Starting From Absolute Zero">
+<meta property="og:description" content="From print('hello') to cleaning real datasets with pandas — the honest story of a marketer teaching himself Python.">
+<meta property="og:url" content="https://vrushanksoni.netlify.app/blog/how-i-learned-python.html">
+<meta property="og:image" content="https://vrushanksoni.netlify.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vrushanksoni.netlify.app/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How I Learned Python, Starting From Absolute Zero","author":{"@type":"Person","name":"Vrushank Soni"},"description":"From print('hello') to cleaning real datasets with pandas — the honest story of a marketer teaching himself Python."}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="grain"></div>
+<nav class="glass navbar" aria-label="Primary">
+  <a class="brand" href="../index.html" aria-label="Vrushank Soni — home"><img class="brand-logo-svg" src="../assets/logo.svg" alt="" width="26" height="26"><span class="brand-name">Vrushank Soni</span></a>
+  <div class="nav-links"><a href="../projects.html">Projects</a><a href="../index.html#work">Work</a><a href="../index.html#certificates">Certificates</a><a href="index.html">Blog</a><a href="../index.html#contact">Contact</a></div>
+  <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">&#9790;</button>
+  <a class="glass-btn" href="../index.html#contact">Let's talk</a>
+</nav>
+<main id="main">
+<header class="article-header">
+  <p class="article-eyebrow">Learning · Python</p>
+  <h1 class="article-title">How I Learned Python, Starting From Absolute Zero</h1>
+  <p class="article-meta">From absolute zero to pandas — what actually worked.</p>
+</header>
+<article class="article-body">
+
+<p>SQL taught me to <em>ask</em> the data questions. Python is where I learned to <em>shape</em> it &mdash; and, honestly, it&rsquo;s the one I was most intimidated by.</p>
+<p>&ldquo;Learning to code&rdquo; sounds like a wall when you&rsquo;re a marketing student. I put it off for a while. Then I hit a problem SQL couldn&rsquo;t solve on its own: I needed realistic datasets to practise on, and I needed to clean messy exports that arrived with dollar signs, mixed date formats and half-empty columns. So I took <em>Python Fundamentals for Beginners</em> and started from genuine zero &mdash; <code>print("hello")</code> zero.</p>
+
+<h2>The first week was ugly</h2>
+<p>My first scripts were held together with hope. I forgot colons. I fought with indentation. I got the same red error message so many times I started reading it instead of panicking &mdash; which, it turns out, is the actual skill.</p>
+<div class="glass code-panel" style="margin:26px 0;"><div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">baby_steps.py</span></div><div class="code-block"><span class="code-line"><span class="c-comment"># where everyone starts</span></span><span class="code-line">name = <span class="c-str">"Vrushank"</span></span><span class="code-line"><span class="c-kw">for</span> i <span class="c-kw">in</span> <span class="c-kw">range</span>(<span class="c-num">3</span>):</span><span class="code-line">    <span class="c-kw">print</span>(<span class="c-str">f"attempt {{i}}: still learning"</span>)</span></div></div>
+<p>The loop was the moment it clicked. Once I understood that a computer will happily do the boring thing 10,000 times without complaining, I stopped seeing Python as &ldquo;coding&rdquo; and started seeing it as &ldquo;a very patient intern.&rdquo;</p>
+
+<h2>Then I met pandas</h2>
+<p>pandas is where Python earned its place in my toolkit. The messy campaign export that used to take me an hour of manual cleaning in Excel became a few lines that ran in a second &mdash; and, more importantly, ran the <em>same way every time</em>.</p>
+<div class="glass code-panel" style="margin:26px 0;"><div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">clean_it.py</span></div><div class="code-block"><span class="code-line"><span class="c-kw">import</span> pandas <span class="c-kw">as</span> pd</span><span class="code-line"></span><span class="code-line">df = pd.read_csv(<span class="c-str">"raw_campaigns.csv"</span>)</span><span class="code-line"><span class="c-comment"># strip the $ and turn text into real numbers</span></span><span class="code-line">df[<span class="c-str">"spend"</span>] = (df[<span class="c-str">"spend"</span>]</span><span class="code-line">    .str.replace(<span class="c-str">"$"</span>, <span class="c-str">""</span>).astype(<span class="c-kw">float</span>))</span><span class="code-line">df = df.drop_duplicates()</span></div></div>
+<p>The datasets behind the dashboards in my <a href="../projects.html">projects</a> are generated and cleaned with Python exactly like this &mdash; correlated, realistic, and reproducible, so the insights are real patterns and not lucky noise.</p>
+
+<div class="glass callout"><p>The trick that finally worked for me: don&rsquo;t &ldquo;learn Python.&rdquo; Pick one annoying, repetitive task you do by hand, and refuse to do it by hand again. You&rsquo;ll learn the exact Python you need, and you&rsquo;ll remember it because it saved you.</p></div>
+
+<h2>Where it pays off now</h2>
+<p>I&rsquo;m not a software engineer, and I don&rsquo;t pretend to be. But I can generate a dataset, clean a messy file, and automate the boring parts of an analysis &mdash; and for a data-minded marketer, that&rsquo;s a genuine superpower. If you&rsquo;re coming from the data side first, start with <a href="how-i-learned-sql.html">how I learned SQL</a> &mdash; the two together are far stronger than either alone.</p>
+
+</article>
+<div class="glass author-box">
+  <span class="author-avatar" aria-hidden="true"></span>
+  <div>
+    <p class="author-name">Vrushank Soni &mdash; let's connect</p>
+    <p class="author-bio">Data Analyst &amp; Digital Marketer &mdash; Power BI, SQL and Python, plus SEO and paid ads.</p>
+    <div class="author-links">
+      <a class="glass-btn ghost" href="mailto:vrushank.soni@outlook.com">Email</a>
+      <a class="glass-btn ghost" href="https://linkedin.com/in/vrushanksoni" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="glass-btn ghost" href="https://github.com/SoniVrushank" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div>
+<section class="article-links">
+  <p class="section-label">More notes</p>
+  <div class="link-row"><a class="glass-btn ghost" href="how-i-learned-sql.html">How I Learned SQL →</a><a class="glass-btn ghost" href="marketer-to-data.html">From BBA to Power BI →</a></div>
+</section>
+<footer class="footer-note"><p><a class="back-link" href="index.html">&larr; All notes</a></p><p class="footer-subcredit" style="margin-top:10px;">Built by Vrushank Soni &mdash; Data Analyst &amp; Digital Marketer.</p></footer>
+</main>
+<script src="../main.js" defer></script>
+</body>
+</html>

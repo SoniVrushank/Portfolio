@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How I Learned SQL, From Zero | Vrushank Soni</title>
+<meta name="description" content="The honest story of a marketer going from spreadsheet chaos to SELECT, JOIN and subqueries — and why it changed the way I work.">
+<meta name="author" content="Vrushank Soni">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#05070E">
+<link rel="canonical" href="https://vrushanksoni.netlify.app/blog/how-i-learned-sql.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How I Learned SQL, From Zero">
+<meta property="og:description" content="The honest story of a marketer going from spreadsheet chaos to SELECT, JOIN and subqueries — and why it changed the way I work.">
+<meta property="og:url" content="https://vrushanksoni.netlify.app/blog/how-i-learned-sql.html">
+<meta property="og:image" content="https://vrushanksoni.netlify.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vrushanksoni.netlify.app/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How I Learned SQL, From Zero","author":{"@type":"Person","name":"Vrushank Soni"},"description":"The honest story of a marketer going from spreadsheet chaos to SELECT, JOIN and subqueries — and why it changed the way I work."}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="grain"></div>
+<nav class="glass navbar" aria-label="Primary">
+  <a class="brand" href="../index.html" aria-label="Vrushank Soni — home"><img class="brand-logo-svg" src="../assets/logo.svg" alt="" width="26" height="26"><span class="brand-name">Vrushank Soni</span></a>
+  <div class="nav-links"><a href="../projects.html">Projects</a><a href="../index.html#work">Work</a><a href="../index.html#certificates">Certificates</a><a href="index.html">Blog</a><a href="../index.html#contact">Contact</a></div>
+  <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">&#9790;</button>
+  <a class="glass-btn" href="../index.html#contact">Let's talk</a>
+</nav>
+<main id="main">
+<header class="article-header">
+  <p class="article-eyebrow">Learning · SQL</p>
+  <h1 class="article-title">How I Learned SQL, From Zero</h1>
+  <p class="article-meta">A story, not a tutorial — how and why I actually learned SQL.</p>
+</header>
+<article class="article-body">
+
+<p>I did not come to SQL as a programmer. I came to it as a marketer who was tired of not being able to answer one question: <strong>&ldquo;how do you actually know it worked?&rdquo;</strong></p>
+<p>I grew up around a business &mdash; the kind of house where the day&rsquo;s sales were dinner conversation. So when I started running campaigns during my internships, I wasn&rsquo;t satisfied with &ldquo;the post did well.&rdquo; I wanted the number behind it. For a while, that meant spreadsheets. And spreadsheets, it turns out, have a ceiling.</p>
+
+<h2>The spreadsheet wall</h2>
+<p>The wall showed up quietly. A campaign export with 40,000 rows that made my laptop fan scream. A VLOOKUP chain so long I couldn&rsquo;t remember what it was doing. Three files that all had &ldquo;final&rdquo; in the name. I was spending more time wrangling the data than reading it. That&rsquo;s when I decided to properly learn <strong>SQL</strong>, and took the <em>End-to-End MySQL: Schema to Subqueries</em> course to force myself through the fundamentals.</p>
+
+<h2>SELECT felt like a cheat code</h2>
+<p>The first real query I wrote returned exactly what I asked for, instantly, from a table with more rows than Excel would have opened. It sounds small. It did not feel small.</p>
+<div class="glass code-panel" style="margin:26px 0;"><div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">first_query.sql</span></div><div class="code-block"><span class="code-line"><span class="c-comment">-- my first useful query</span></span><span class="code-line"><span class="c-kw">SELECT</span> platform, <span class="c-kw">SUM</span>(spend) <span class="c-kw">AS</span> total_spend</span><span class="code-line"><span class="c-kw">FROM</span> campaigns</span><span class="code-line"><span class="c-kw">GROUP BY</span> platform</span><span class="code-line"><span class="c-kw">ORDER BY</span> total_spend <span class="c-kw">DESC</span>;</span></div></div>
+<p><strong>GROUP BY</strong> was the moment it clicked that SQL <em>thinks</em> the way a marketer asks questions: &ldquo;show me spend, but per channel.&rdquo; &ldquo;show me conversions, but per week.&rdquo; The word &ldquo;per&rdquo; is almost always a <code>GROUP BY</code>.</p>
+
+<h2>The JOIN that broke my brain (then fixed it)</h2>
+<p>JOINs were where I nearly gave up. My campaign data lived in one table, my cost data in another, and I could not for the life of me get them to line up without either duplicating rows or losing them. I stared at a wrong number for two hours.</p>
+<p>What fixed it was stopping and drawing it on paper &mdash; two boxes, a line between the matching keys. Once I could <em>see</em> that a JOIN is just &ldquo;match these rows to those rows on a shared key,&rdquo; it stopped being magic and started being a tool.</p>
+<div class="glass code-panel" style="margin:26px 0;"><div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">join_it.sql</span></div><div class="code-block"><span class="code-line"><span class="c-comment">-- spend and revenue, finally in one place</span></span><span class="code-line"><span class="c-kw">SELECT</span> c.campaign, c.spend, r.revenue,</span><span class="code-line">       <span class="c-kw">ROUND</span>(r.revenue / <span class="c-kw">NULLIF</span>(c.spend,<span class="c-num">0</span>), <span class="c-num">2</span>) <span class="c-kw">AS</span> roas</span><span class="code-line"><span class="c-kw">FROM</span> campaigns c</span><span class="code-line"><span class="c-kw">JOIN</span> results r <span class="c-kw">ON</span> r.campaign_id = c.id;</span></div></div>
+
+<h2>Subqueries, and the level-up</h2>
+<p>Subqueries were the point where I felt like I&rsquo;d actually crossed over. Being able to ask &ldquo;which campaigns performed above the account average?&rdquo; in one query &mdash; a question inside a question &mdash; changed how I thought about the data entirely.</p>
+<div class="glass callout"><p>You don&rsquo;t need a computer-science degree to learn SQL. You need one real question you actually care about, and the stubbornness to not close the tab until you&rsquo;ve answered it.</p></div>
+
+<h2>What it changed</h2>
+<p>SQL didn&rsquo;t just make me faster. It changed the kind of conversations I could have. I stopped saying &ldquo;I think it worked&rdquo; and started saying &ldquo;here&rsquo;s the number, and here&rsquo;s the query that got it.&rdquo; That&rsquo;s the whole reason the dashboards on this site exist &mdash; every one of them starts as a question written in SQL.</p>
+<p>Next I wanted to go further than querying &mdash; I wanted to <em>shape</em> the data. That&rsquo;s the story of <a href="how-i-learned-python.html">how I learned Python</a>.</p>
+
+</article>
+<div class="glass author-box">
+  <span class="author-avatar" aria-hidden="true"></span>
+  <div>
+    <p class="author-name">Vrushank Soni &mdash; let's connect</p>
+    <p class="author-bio">Data Analyst &amp; Digital Marketer &mdash; Power BI, SQL and Python, plus SEO and paid ads.</p>
+    <div class="author-links">
+      <a class="glass-btn ghost" href="mailto:vrushank.soni@outlook.com">Email</a>
+      <a class="glass-btn ghost" href="https://linkedin.com/in/vrushanksoni" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="glass-btn ghost" href="https://github.com/SoniVrushank" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div>
+<section class="article-links">
+  <p class="section-label">More notes</p>
+  <div class="link-row"><a class="glass-btn ghost" href="how-i-learned-python.html">How I Learned Python →</a><a class="glass-btn ghost" href="marketer-to-data.html">From BBA to Power BI →</a></div>
+</section>
+<footer class="footer-note"><p><a class="back-link" href="index.html">&larr; All notes</a></p><p class="footer-subcredit" style="margin-top:10px;">Built by Vrushank Soni &mdash; Data Analyst &amp; Digital Marketer.</p></footer>
+</main>
+<script src="../main.js" defer></script>
+</body>
+</html>

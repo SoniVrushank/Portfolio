@@ -8,7 +8,7 @@
 <meta name="keywords" content="Vrushank Soni, Data Analyst, Digital Marketing, Power BI, SQL, Python, SEO, Google Ads, Meta Ads, Ahmedabad, portfolio">
 <meta name="author" content="Vrushank Soni">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#050505">
+<meta name="theme-color" content="#05070E">
 <link rel="canonical" href="https://vrushanksoni.netlify.app/">
 
 <meta property="og:type" content="website">
@@ -29,9 +29,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Cpath d='M9 9 L16 23 L23 9' stroke='%23E14B3D' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
 
-<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 
 <script type="application/ld+json">
 {
@@ -41,10 +42,11 @@
   "jobTitle": "Data Analyst & Digital Marketer",
   "description": "Data Analyst and Digital Marketer turning business data into smarter decisions with Power BI, SQL and Python, alongside SEO and paid-ads strategy.",
   "url": "https://vrushanksoni.netlify.app/",
+  "email": "vrushank.soni@outlook.com",
   "image": "https://vrushanksoni.netlify.app/assets/og-image.png",
   "address": { "@type": "PostalAddress", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" },
   "knowsAbout": ["Data Analysis","Power BI","SQL","Python","Data Visualization","SEO","Google Ads","Meta Ads","Google Analytics","Digital Marketing"],
-  "alumniOf": ["LJ Institute of Business Administration","SKIPS Ahmedabad"],
+  "alumniOf": ["LJ Institute of Business Administration","St. Kabir Institute of Professional Studies (SKIPS)"],
   "sameAs": [
     "https://linkedin.com/in/vrushanksoni",
     "https://instagram.com/vrushh_98",
@@ -57,13 +59,12 @@
 
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="scroll-progress" aria-hidden="true"></div>
-<div class="aurora" aria-hidden="true"><b class="a1"></b><b class="a2"></b><b class="a3"></b></div>
+<div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
+<div class="bg-grid" aria-hidden="true"></div>
 <div class="grain"></div>
-<div class="cursor-dot" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"></div>
 
 <nav class="glass navbar" aria-label="Primary">
-  <a class="brand" href="#top"><span class="brand-mark"></span><span class="brand-name">Vrushank Soni</span></a>
+  <a class="brand" href="#top" aria-label="Vrushank Soni — home"><img class="brand-logo-svg" src="assets/logo.svg" alt="" width="26" height="26"><span class="brand-name">Vrushank Soni</span></a>
   <div class="nav-links">
     <a href="#projects">Projects</a>
     <a href="#work">Work</a>
@@ -72,7 +73,7 @@
     <a href="#contact">Contact</a>
   </div>
   <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">☾</button>
-  <a class="glass-btn" href="#contact" data-magnetic>Let's talk</a>
+  <a class="glass-btn" href="#contact">Let's talk</a>
 </nav>
 
 <main id="main">
@@ -84,9 +85,8 @@
     <h1>Vrushank<br>Soni</h1>
     <p class="tagline">Helping businesses turn data into smarter decisions — through analytics and digital strategy.</p>
     <div class="hero-cta">
-      <a class="glass-btn primary" href="#projects" data-magnetic>View My Work</a>
-      <!-- Add your resume PDF at assets/Vrushank-Soni-Resume.pdf, then this button just works -->
-      <a class="glass-btn secondary" href="assets/Vrushank-Soni-Resume.pdf" download>Resume</a>
+      <a class="glass-btn primary" href="#projects">View My Work</a>
+      <a class="glass-btn secondary" href="assets/Vrushank-Soni-Resume.pdf" target="_blank" rel="noopener">Resume</a>
     </div>
     <div class="hero-meta">
       <span><span class="pip" aria-hidden="true"></span>Ahmedabad, IN</span>
@@ -111,7 +111,6 @@
       <span class="code-line"><span class="c-comment">$</span> <span class="cursor-blink" aria-hidden="true"></span></span>
     </div>
   </div>
-  <div class="scroll-cue" aria-hidden="true"><span class="line"></span>Scroll</div>
 </header>
 
 <!-- ===================== 01 ABOUT ===================== -->
@@ -133,34 +132,48 @@
   <p class="section-kicker">02 — Skills</p>
   <h2 class="section-heading">A toolkit that spans <span class="accent">data and marketing</span>.</h2>
   <div class="skills-grid">
-    <div class="glass skill-col">
+    <div class="glass skill-col" style="--hl:#42C58A">
       <p class="col-head">Analytics</p>
       <div class="skill-list">
-        <span class="skill-item">Power BI</span><span class="skill-item">MySQL</span><span class="skill-item">Excel</span><span class="skill-item">Python</span>
+        <span class="skill-item key">Power BI<span class="kbadge">core</span></span>
+        <span class="skill-item">MySQL</span>
+        <span class="skill-item">Excel</span>
+        <span class="skill-item">Python</span>
       </div>
     </div>
-    <div class="glass skill-col">
+    <div class="glass skill-col" style="--hl:#5E93E6">
       <p class="col-head">Marketing</p>
       <div class="skill-list">
-        <span class="skill-item">SEO</span><span class="skill-item">Google Ads</span><span class="skill-item">Meta Ads</span><span class="skill-item">Google Analytics</span>
+        <span class="skill-item">SEO</span>
+        <span class="skill-item key">Google Ads<span class="kbadge">core</span></span>
+        <span class="skill-item">Meta Ads</span>
+        <span class="skill-item">Google Analytics</span>
       </div>
     </div>
-    <div class="glass skill-col">
-      <p class="col-head">Tools</p>
+    <div class="glass skill-col" style="--hl:#5AB6E6">
+      <p class="col-head">AI</p>
       <div class="skill-list">
-        <span class="skill-item">Canva</span><span class="skill-item">Notion</span><span class="skill-item">VS Code</span><span class="skill-item">Claude</span><span class="skill-item">ChatGPT</span>
+        <span class="skill-item">ChatGPT</span>
+        <span class="skill-item">Claude</span>
+        <span class="skill-item key">AI-Assisted Analysis<span class="kbadge">core</span></span>
+        <span class="skill-item">Prompt Engineering</span>
+        <span class="skill-item">Workflow Automation</span>
       </div>
     </div>
-    <div class="glass skill-col">
+    <div class="glass skill-col" style="--hl:#8E86E0">
       <p class="col-head">Professional</p>
       <div class="skill-list">
-        <span class="skill-item">Client Handling</span><span class="skill-item">Content Strategy</span><span class="skill-item">Critical Thinking</span><span class="skill-item">Data Visualization</span><span class="skill-item">Communication</span>
+        <span class="skill-item key">Data Visualization<span class="kbadge">core</span></span>
+        <span class="skill-item">Client Handling</span>
+        <span class="skill-item">Content Strategy</span>
+        <span class="skill-item">Critical Thinking</span>
+        <span class="skill-item">Communication</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SQL showcase panel — minimal terminal accent -->
+<!-- SQL showcase panel -->
 <section class="section reveal">
   <div class="glass code-panel">
     <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">campaign_check.sql</span></div>
@@ -186,26 +199,26 @@
     <div class="glass exp-card reveal">
       <span class="exp-mark">Z</span>
       <div>
-        <p class="exp-name">Zero Dimensions — Digital Marketing &amp; SEO</p>
+        <p class="exp-name">Zero Dimensions — Social Media &amp; SEO</p>
         <p class="exp-role">Owned on-page SEO and worked hand-in-hand with the off-page team so content ranked, not just shipped. Turned campaign data into weekly reports leadership could act on — engagement up 15%.</p>
       </div>
     </div>
     <div class="glass exp-card reveal">
       <span class="exp-mark">P</span>
       <div>
-        <p class="exp-name">Provectus — Marketing Strategy</p>
+        <p class="exp-name">Provectus — Marketing Intern</p>
         <p class="exp-role">Grew an advisory firm's LinkedIn presence 30% in six months by reading which content converted and doubling down — B2B positioning driven by analysis, not guesswork.</p>
       </div>
     </div>
     <div class="glass exp-card reveal">
-      <span class="exp-mark">F</span>
+      <span class="exp-mark">S</span>
       <div>
-        <p class="exp-name">Freelance — Client Campaigns</p>
-        <p class="exp-role">Handled clients end-to-end across Meta Ads, content and reporting. Used AI-assisted workflows to ship more ad variations faster, and tied every campaign back to its performance numbers.</p>
+        <p class="exp-name">StuIntern &amp; Freelance — Digital Marketing</p>
+        <p class="exp-role">Ran Meta Ads, content and reporting for clients end-to-end. Used AI-assisted workflows to ship more ad variations faster, and tied every campaign back to its performance numbers.</p>
       </div>
     </div>
   </div>
-  <div class="metrics-grid" style="margin-top:26px;">
+  <div class="metrics-grid" style="margin-top:24px;">
     <div class="glass metric-card reveal">
       <div class="metric-num-wrap"><span class="metric-num" data-count="15">0</span><span class="metric-suffix">%</span></div>
       <span class="metric-label">Engagement lift · Zero Dimensions</span>
@@ -221,7 +234,7 @@
   </div>
 </section>
 
-<!-- ===================== 04 PROJECTS (slider → projects.html) ===================== -->
+<!-- ===================== 04 PROJECTS (slider) ===================== -->
 <section class="section reveal" id="projects">
   <div class="slider-head">
     <div>
@@ -232,7 +245,7 @@
   </div>
   <div class="slider-viewport">
     <div class="slider">
-      <article class="glass project-card slide project-slide">
+      <article class="glass project-card slide project-slide reveal">
         <a class="p-thumb" href="dashboards/spotify.html" target="_blank" rel="noopener" aria-label="Open Spotify Analytics Dashboard live preview">
           <span class="p-tag"><span class="dot" aria-hidden="true"></span>Live preview</span>
           <img src="assets/thumbs/spotify.png" alt="Spotify Analytics Power BI dashboard" loading="lazy" width="900" height="506">
@@ -242,13 +255,10 @@
           <h3 class="project-title">Spotify Analytics Dashboard</h3>
           <p class="project-desc">12,000 streaming records — what retains listeners, and where premium conversion hides.</p>
           <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Python</span></div>
-          <div class="project-foot">
-            <span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span>
-            <span class="project-links"><a class="mini-btn" href="projects.html#spotify">Details →</a></span>
-          </div>
+          <div class="project-foot"><span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span><span class="project-links"><a class="mini-btn" href="projects.html#spotify">Details →</a></span></div>
         </div>
       </article>
-      <article class="glass project-card slide project-slide">
+      <article class="glass project-card slide project-slide reveal">
         <a class="p-thumb" href="dashboards/sales.html" target="_blank" rel="noopener" aria-label="Open Sales Performance Dashboard live preview">
           <span class="p-tag"><span class="dot" aria-hidden="true"></span>Live preview</span>
           <img src="assets/thumbs/sales.png" alt="Retail Sales Performance Power BI dashboard" loading="lazy" width="900" height="506">
@@ -258,13 +268,10 @@
           <h3 class="project-title">Sales Performance Dashboard</h3>
           <p class="project-desc">8,000 orders, $3.68M revenue — where profit is made and where discounting destroys it.</p>
           <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Time Intel</span><span class="tag">SQL</span></div>
-          <div class="project-foot">
-            <span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span>
-            <span class="project-links"><a class="mini-btn" href="projects.html#sales">Details →</a></span>
-          </div>
+          <div class="project-foot"><span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span><span class="project-links"><a class="mini-btn" href="projects.html#sales">Details →</a></span></div>
         </div>
       </article>
-      <article class="glass project-card slide project-slide">
+      <article class="glass project-card slide project-slide reveal">
         <a class="p-thumb" href="dashboards/marketing.html" target="_blank" rel="noopener" aria-label="Open Marketing Analytics Dashboard live preview">
           <span class="p-tag"><span class="dot" aria-hidden="true"></span>Live preview</span>
           <img src="assets/thumbs/marketing.png" alt="Digital Marketing Analytics Power BI dashboard" loading="lazy" width="900" height="506">
@@ -274,13 +281,10 @@
           <h3 class="project-title">Marketing Analytics Dashboard</h3>
           <p class="project-desc">$4.55M spend → $13.9M revenue — which channels earn their budget, and where it should move.</p>
           <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL</span><span class="tag">Python</span></div>
-          <div class="project-foot">
-            <span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span>
-            <span class="project-links"><a class="mini-btn" href="projects.html#marketing">Details →</a></span>
-          </div>
+          <div class="project-foot"><span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span><span class="project-links"><a class="mini-btn" href="projects.html#marketing">Details →</a></span></div>
         </div>
       </article>
-      <article class="glass project-card slide project-slide">
+      <article class="glass project-card slide project-slide reveal">
         <a class="p-thumb" href="dashboards/churn.html" target="_blank" rel="noopener" aria-label="Open Customer Churn Analysis live preview">
           <span class="p-tag"><span class="dot" aria-hidden="true"></span>Live preview</span>
           <img src="assets/thumbs/churn.png" alt="Customer Churn Analysis Power BI dashboard" loading="lazy" width="900" height="506">
@@ -290,26 +294,20 @@
           <h3 class="project-title">Customer Churn Analysis</h3>
           <p class="project-desc">7,500 subscribers, 28.5% churn — a risk score for who to save first, and what's on the line.</p>
           <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Risk Scoring</span><span class="tag">SQL</span></div>
-          <div class="project-foot">
-            <span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span>
-            <span class="project-links"><a class="mini-btn" href="projects.html#churn">Details →</a></span>
-          </div>
+          <div class="project-foot"><span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span><span class="project-links"><a class="mini-btn" href="projects.html#churn">Details →</a></span></div>
         </div>
       </article>
-      <article class="glass project-card slide project-slide">
+      <article class="glass project-card slide project-slide reveal">
         <a class="p-thumb" href="dashboards/hevify.html" target="_blank" rel="noopener" aria-label="Open Hevify Website Analytics live preview">
           <span class="p-tag"><span class="dot" aria-hidden="true"></span>Live preview</span>
-          <img src="assets/thumbs/hevify.png" alt="Hevify Website & SEO Analytics Power BI dashboard" loading="lazy" width="900" height="506">
+          <img src="assets/thumbs/hevify.png" alt="Hevify Website and SEO Analytics Power BI dashboard" loading="lazy" width="900" height="506">
           <span class="p-overlay"><span class="live-pill">Open dashboard ↗</span></span>
         </a>
         <div class="project-body">
           <h3 class="project-title">Hevify Website Analytics</h3>
-          <p class="project-desc">Website & SEO analytics — traffic, bounce, and keyword gaps one push from page one.</p>
+          <p class="project-desc">Website &amp; SEO analytics — traffic, bounce, and keyword gaps one push from page one.</p>
           <div class="project-tags"><span class="tag">Power BI</span><span class="tag">SEO</span><span class="tag">GA / Search Console</span><span class="tag">SQL</span></div>
-          <div class="project-foot">
-            <span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span>
-            <span class="project-links"><a class="mini-btn" href="projects.html#hevify">Details →</a></span>
-          </div>
+          <div class="project-foot"><span class="badge live"><span class="dot" aria-hidden="true"></span>Interactive</span><span class="project-links"><a class="mini-btn" href="projects.html#hevify">Details →</a></span></div>
         </div>
       </article>
     </div>
@@ -317,18 +315,17 @@
   </div>
 </section>
 
-<!-- ===================== 05 MY WORK / BRANDS (single sliding row) ===================== -->
+<!-- ===================== 05 BRANDS (slider) ===================== -->
 <section class="section reveal" id="work">
   <p class="section-kicker">05 — Brands I've worked with</p>
   <h2 class="section-heading">Marketing, content and analytics — <span class="accent">across industries</span>.</h2>
   <div class="slider-viewport">
     <div class="slider">
-      <!-- To add a logo: put an <img> inside .brand-logo in place of the initials -->
-      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">ZD</span><div><p class="brand-name-lg">Zero Dimensions</p><p class="brand-role">Digital Marketing &amp; SEO</p></div></div><p class="brand-services">On-page SEO, content and campaign reporting.</p><div class="brand-foot"><span class="brand-type">Internship</span><span>2024</span></div></div>
-      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">P</span><div><p class="brand-name-lg">Provectus</p><p class="brand-role">Marketing Strategy</p></div></div><p class="brand-services">LinkedIn growth &amp; B2B positioning.</p><div class="brand-foot"><span class="brand-type">Internship</span><span>2024</span></div></div>
-      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">H</span><div><p class="brand-name-lg">Hevify</p><p class="brand-role">Marketing &amp; Analytics</p></div></div><p class="brand-services">Website &amp; SEO analytics, growth.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2024 — now</span></div></div>
-      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">V</span><div><p class="brand-name-lg">VPAG</p><p class="brand-role">Digital Marketing</p></div></div><p class="brand-services">Social media and content support.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2024</span></div></div>
-      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">B2</span><div><p class="brand-name-lg">B2B One Mart</p><p class="brand-role">Digital Marketing</p></div></div><p class="brand-services">Rebuilt the digital presence.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2024</span></div></div>
+      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">ZD</span><div><p class="brand-name-lg">Zero Dimensions</p><p class="brand-role">Social Media &amp; SEO</p></div></div><p class="brand-services">On-page SEO, content and campaign reporting.</p><div class="brand-foot"><span class="brand-type">Internship</span><span>2026</span></div></div>
+      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">P</span><div><p class="brand-name-lg">Provectus</p><p class="brand-role">Marketing Strategy</p></div></div><p class="brand-services">LinkedIn growth and B2B positioning.</p><div class="brand-foot"><span class="brand-type">Internship</span><span>2025</span></div></div>
+      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">H</span><div><p class="brand-name-lg">Hevify</p><p class="brand-role">Marketing &amp; Analytics</p></div></div><p class="brand-services">Website &amp; SEO analytics, growth.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2025 — now</span></div></div>
+      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">V</span><div><p class="brand-name-lg">VPAG</p><p class="brand-role">Digital Marketing</p></div></div><p class="brand-services">Social media and content support.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2025</span></div></div>
+      <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">B2</span><div><p class="brand-name-lg">B2B One Mart</p><p class="brand-role">Digital Marketing</p></div></div><p class="brand-services">Rebuilt the digital presence.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2025</span></div></div>
       <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">PE</span><div><p class="brand-name-lg">PhysioEdge</p><p class="brand-role">Social Media Marketing</p></div></div><p class="brand-services">Meta content, Instagram +120%.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2024</span></div></div>
       <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">NM</span><div><p class="brand-name-lg">NearMe India</p><p class="brand-role">Digital Marketing</p></div></div><p class="brand-services">Social media, content and reach.</p><div class="brand-foot"><span class="brand-type">Client</span><span>2024</span></div></div>
       <div class="glass brand-slide slide"><div class="brand-top"><span class="brand-logo">TV</span><div><p class="brand-name-lg">TruVeda</p><p class="brand-role">Meta Ads &amp; Content</p></div></div><p class="brand-services">Ayurveda brand — paid social.</p><div class="brand-foot"><span class="brand-type">Freelance</span><span>2024</span></div></div>
@@ -347,51 +344,51 @@
   <h2 class="section-heading">Recognised, and <span class="accent">certified</span>.</h2>
 
   <div class="ach-grid">
-    <article class="glass ach-card reveal">
+    <a class="glass ach-card reveal" href="assets/certs/ach-srijan.jpg" target="_blank" rel="noopener">
       <span class="ach-icon" aria-hidden="true">🏆</span>
-      <p class="ach-title">Business Competition Winner</p>
-      <p class="ach-desc">Placed first in an inter-college business competition — strategy, financials and pitch.</p>
-    </article>
-    <article class="glass ach-card reveal">
+      <p class="ach-title">Srijan 2025 — Business Presentation</p>
+      <p class="ach-desc">Winner, group presentation award — SKIPS School of Business, Marketing Maestros Club.</p>
+      <span class="ach-foot">View certificate ↗</span>
+    </a>
+    <a class="glass ach-card reveal" href="assets/certs/ach-chaupal.jpg" target="_blank" rel="noopener">
       <span class="ach-icon" aria-hidden="true">🥇</span>
-      <p class="ach-title">Marketing Competition Winner</p>
-      <p class="ach-desc">Won a marketing case competition — a campaign concept judged on insight and execution.</p>
-    </article>
-    <article class="glass ach-card reveal">
+      <p class="ach-title">SKIPS Chaupal 2026 — Presentation</p>
+      <p class="ach-desc">Winner / Runner-Up, presentation competition — SKIPS School of Business.</p>
+      <span class="ach-foot">View certificate ↗</span>
+    </a>
+    <div class="glass ach-card reveal">
       <span class="ach-icon" aria-hidden="true">📊</span>
       <p class="ach-title">Final Year Project Leader</p>
       <p class="ach-desc">Led the final-year capstone team from research through to final delivery.</p>
-    </article>
+    </div>
   </div>
 
-  <p class="subsection-label" style="margin-top:38px;">Certificates</p>
-  <!-- To attach a certificate: replace the .cert-frame inner (.cert-badge) with
-       <img class="cert-img" src="assets/certs/sql.png" alt="SQL certificate"> -->
+  <p class="subsection-label" style="margin-top:34px;">Certificates</p>
   <div class="cert-grid">
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">SQL</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">SQL</p><p class="cert-meta">Certificate · to be added</p></div>
-    </article>
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">PY</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">Python</p><p class="cert-meta">Certificate · to be added</p></div>
-    </article>
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">GA</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">Google Analytics</p><p class="cert-meta">Certificate · to be added</p></div>
-    </article>
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">DM</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">Digital Marketing</p><p class="cert-meta">Certificate · to be added</p></div>
-    </article>
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">EXP</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">Experience — Zero Dimensions</p><p class="cert-meta">Internship certificate · to be added</p></div>
-    </article>
-    <article class="glass cert-card reveal">
-      <div class="cert-frame"><span class="cert-mark">EXP</span><span class="cert-badge">Add certificate</span></div>
-      <div class="cert-info"><p class="cert-name">Experience — Provectus</p><p class="cert-meta">Internship certificate · to be added</p></div>
-    </article>
+    <a class="glass cert-card reveal" href="assets/certs/mysql.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/mysql.jpg" alt="End-to-End MySQL certificate — Great Learning" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">End-to-End MySQL</p><p class="cert-meta">Great Learning · 2025</p></div>
+    </a>
+    <a class="glass cert-card reveal" href="assets/certs/python.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/python.jpg" alt="Python Fundamentals certificate — Great Learning" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">Python Fundamentals</p><p class="cert-meta">Great Learning · 2025</p></div>
+    </a>
+    <a class="glass cert-card reveal" href="assets/certs/google-analytics.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/google-analytics.jpg" alt="Google Analytics certification" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">Google Analytics</p><p class="cert-meta">Certification</p></div>
+    </a>
+    <a class="glass cert-card reveal" href="assets/certs/digital-marketing.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/digital-marketing.jpg" alt="Digital Marketing internship certificate — StuIntern" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">Digital Marketing</p><p class="cert-meta">StuIntern · 2024</p></div>
+    </a>
+    <a class="glass cert-card reveal" href="assets/certs/exp-zero-dimensions.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/exp-zero-dimensions.jpg" alt="Zero Dimensions internship experience letter" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">Experience — Zero Dimensions</p><p class="cert-meta">Internship letter</p></div>
+    </a>
+    <a class="glass cert-card reveal" href="assets/certs/exp-provectus.jpg" target="_blank" rel="noopener">
+      <div class="cert-frame"><img class="cert-img" src="assets/certs/exp-provectus.jpg" alt="Provectus marketing internship certificate" loading="lazy"><span class="cert-open">Open ↗</span></div>
+      <div class="cert-info"><p class="cert-name">Experience — Provectus</p><p class="cert-meta">Marketing Intern · 2025</p></div>
+    </a>
   </div>
 </section>
 
@@ -400,21 +397,66 @@
   <p class="section-kicker">07 — Notes</p>
   <h2 class="section-heading">Things I've <span class="accent">written down</span>.</h2>
   <div class="slider-viewport">
-    <div class="slider">
-      <a class="glass finding-slide slide" style="width:320px;" href="blog/seo-keywords-basics.html">
-        <span class="blog-tag">SEO</span>
-        <p class="blog-title">SEO Keywords, Explained</p>
-        <p class="blog-oneliner">Find and place keywords without stuffing them.</p>
+<div class="slider">
+      <a class="glass blog-term slide" href="blog/how-i-learned-sql.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">learning_sql.md</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ cat learning_sql.md</span></span>
+          <span class="bt-tag">SQL · Story</span>
+          <p class="bt-title">How I Learned SQL, From Zero</p>
+          <p class="bt-desc">A marketer who needed real answers — SELECT to subqueries.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
       </a>
-      <a class="glass finding-slide slide" style="width:320px;" href="blog/meta-ads-vs-google-ads.html">
-        <span class="blog-tag">Paid Ads</span>
-        <p class="blog-title">Meta Ads vs Google Ads</p>
-        <p class="blog-oneliner">Which platform actually fits your business.</p>
+      <a class="glass blog-term slide" href="blog/how-i-learned-python.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">learning_python.py</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ python learning.py</span></span>
+          <span class="bt-tag">Python · Story</span>
+          <p class="bt-title">How I Learned Python, From Zero</p>
+          <p class="bt-desc">print('hello') to cleaning real data with pandas.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
       </a>
-      <a class="glass finding-slide slide" style="width:320px;" href="blog/index.html">
-        <span class="blog-tag">Blog</span>
-        <p class="blog-title">All notes →</p>
-        <p class="blog-oneliner">Short, practical writing on marketing and data.</p>
+      <a class="glass blog-term slide" href="blog/marketer-to-data.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">journey.md</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ cat journey.md</span></span>
+          <span class="bt-tag">Journey</span>
+          <p class="bt-title">From BBA to Power BI</p>
+          <p class="bt-desc">How a marketer ended up in the data — and why it fits.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
+      </a>
+      <a class="glass blog-term slide" href="blog/seo-keywords-basics.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">seo_notes.md</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ cat seo_notes.md</span></span>
+          <span class="bt-tag">SEO</span>
+          <p class="bt-title">SEO Keywords, Explained</p>
+          <p class="bt-desc">Find and place keywords without stuffing them.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
+      </a>
+      <a class="glass blog-term slide" href="blog/meta-ads-vs-google-ads.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">paid_ads.md</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ cat paid_ads.md</span></span>
+          <span class="bt-tag">Paid Ads</span>
+          <p class="bt-title">Meta Ads vs Google Ads</p>
+          <p class="bt-desc">Which platform actually fits your business.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
+      </a>
+      <a class="glass blog-term slide" href="blog/index.html">
+        <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">index.md</span></div>
+        <div class="term-body">
+          <span class="ln"><span class="c-comment">$ ls blog/</span></span>
+          <span class="bt-tag">Blog</span>
+          <p class="bt-title">All notes →</p>
+          <p class="bt-desc">Everything I've written on data and marketing.</p>
+          <span class="bt-foot">read &rarr;</span>
+        </div>
       </a>
     </div>
     <p class="slider-hint">drag / scroll — latest notes</p>
@@ -428,7 +470,7 @@
     <p class="contact-line">Let's connect.</p>
     <p class="contact-sweet">Hiring, collaborating, or just want a dashboard that actually answers the question — send it over. Good conversations have started with less.</p>
     <div class="contact-actions">
-      <a class="glass-btn email" href="mailto:sonivrushank9@gmail.com">Email</a>
+      <a class="glass-btn email" href="mailto:vrushank.soni@outlook.com">Email</a>
       <a class="glass-btn whatsapp" href="https://wa.me/919429428270?text=Hi%20Vrushank!%20I%27d%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
       <a class="glass-btn linkedin" href="https://linkedin.com/in/vrushanksoni" target="_blank" rel="noopener">LinkedIn</a>
       <a class="glass-btn github" href="https://github.com/SoniVrushank" target="_blank" rel="noopener">GitHub</a>
@@ -444,9 +486,6 @@
   <p class="footer-subcredit">Data Analyst &amp; Digital Marketer · Ahmedabad, India</p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.13/lenis.min.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>

@@ -19,15 +19,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Cpath d='M9 9 L16 23 L23 9' stroke='%23E14B3D' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<script>try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>document.documentElement.classList.add('js');try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}</script>
 </head>
 <body>
 
+<div class="galaxy" aria-hidden="true"><div class="stars"></div><div class="stars s2"></div></div>
+<div class="bg-grid" aria-hidden="true"></div>
 <div class="grain"></div>
 
 <nav class="glass navbar">
-  <a class="brand" href="../index.html"><span class="brand-mark"></span><span class="brand-name">Vrushank Soni</span></a>
+  <a class="brand" href="../index.html" aria-label="Vrushank Soni — home"><img class="brand-logo-svg" src="../assets/logo.svg" alt="" width="26" height="26"><span class="brand-name">Vrushank Soni</span></a>
   <div class="nav-links"><a href="../projects.html">Projects</a><a href="../index.html#work">Work</a><a href="../index.html#certificates">Certificates</a><a href="index.html">Blog</a><a href="../index.html#contact">Contact</a></div>
   <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode">☾</button>
   <a class="glass-btn" href="../index.html#contact">Let's talk</a>
@@ -39,24 +41,58 @@
   <p class="article-meta">Short, practical, no fluff.</p>
 </header>
 
-<section class="section">
-  <div class="blog-grid">
-    <div class="pile-wrap">
-      <div class="glass pile-back" aria-hidden="true"></div>
-      <a class="glass pile-front blog-card" href="seo-keywords-basics.html">
-        <span class="blog-tag">SEO</span>
-        <p class="blog-title">SEO Keywords, Explained</p>
-        <p class="blog-excerpt">What SEO keywords actually are, how to find them for free, and where to place them so they work.</p>
-      </a>
-    </div>
-    <div class="pile-wrap">
-      <div class="glass pile-back" aria-hidden="true"></div>
-      <a class="glass pile-front blog-card" href="meta-ads-vs-google-ads.html">
-        <span class="blog-tag">Paid Ads</span>
-        <p class="blog-title">Meta Ads vs Google Ads: Which Wins for You?</p>
-        <p class="blog-excerpt">The real difference between the two platforms, and a straight answer on which to start with.</p>
-      </a>
-    </div>
+<section class="section" style="padding-bottom:10px;">
+  <div class="blog-term-grid">
+    <a class="glass blog-term" href="how-i-learned-sql.html">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">learning_sql.md</span></div>
+      <div class="term-body">
+        <span class="ln"><span class="c-comment">$ cat learning_sql.md</span></span>
+        <span class="bt-tag">SQL · Story</span>
+        <p class="bt-title">How I Learned SQL, From Zero</p>
+        <p class="bt-desc">A marketer who needed real answers — SELECT to subqueries.</p>
+        <span class="bt-foot">read &rarr;</span>
+      </div>
+    </a>
+    <a class="glass blog-term" href="how-i-learned-python.html">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">learning_python.py</span></div>
+      <div class="term-body">
+        <span class="ln"><span class="c-comment">$ python learning.py</span></span>
+        <span class="bt-tag">Python · Story</span>
+        <p class="bt-title">How I Learned Python, From Zero</p>
+        <p class="bt-desc">print('hello') to cleaning real data with pandas.</p>
+        <span class="bt-foot">read &rarr;</span>
+      </div>
+    </a>
+    <a class="glass blog-term" href="marketer-to-data.html">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">journey.md</span></div>
+      <div class="term-body">
+        <span class="ln"><span class="c-comment">$ cat journey.md</span></span>
+        <span class="bt-tag">Journey</span>
+        <p class="bt-title">From BBA to Power BI</p>
+        <p class="bt-desc">How a marketer ended up in the data — and why it fits.</p>
+        <span class="bt-foot">read &rarr;</span>
+      </div>
+    </a>
+    <a class="glass blog-term" href="seo-keywords-basics.html">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">seo_notes.md</span></div>
+      <div class="term-body">
+        <span class="ln"><span class="c-comment">$ cat seo_notes.md</span></span>
+        <span class="bt-tag">SEO</span>
+        <p class="bt-title">SEO Keywords, Explained</p>
+        <p class="bt-desc">Find and place keywords without stuffing them.</p>
+        <span class="bt-foot">read &rarr;</span>
+      </div>
+    </a>
+    <a class="glass blog-term" href="meta-ads-vs-google-ads.html">
+      <div class="chrome-bar"><span></span><span></span><span></span><span class="chrome-filename">paid_ads.md</span></div>
+      <div class="term-body">
+        <span class="ln"><span class="c-comment">$ cat paid_ads.md</span></span>
+        <span class="bt-tag">Paid Ads</span>
+        <p class="bt-title">Meta Ads vs Google Ads</p>
+        <p class="bt-desc">Which platform actually fits your business.</p>
+        <span class="bt-foot">read &rarr;</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -66,7 +102,7 @@
     <p class="author-name">Vrushank Soni — let's connect</p>
     <p class="author-bio">Data Analyst &amp; Digital Marketer — Power BI, SQL and Python, plus SEO and paid ads.</p>
     <div class="author-links">
-      <a class="glass-btn ghost" href="mailto:sonivrushank9@gmail.com">Email</a>
+      <a class="glass-btn ghost" href="mailto:vrushank.soni@outlook.com">Email</a>
       <a class="glass-btn ghost" href="https://linkedin.com/in/vrushanksoni" target="_blank" rel="noopener">LinkedIn</a>
       <a class="glass-btn ghost" href="https://instagram.com/vrushh_98" target="_blank" rel="noopener">Instagram</a>
       <a class="glass-btn ghost" href="https://wa.me/919429428270?text=Hi%20Vrushank!%20I%27d%20like%20to%20connect." target="_blank" rel="noopener">WhatsApp</a>
@@ -77,8 +113,6 @@
 
 <footer class="footer-note"><p><a class="back-link" href="../index.html">&larr; Back to the portfolio</a></p><p style="margin-top:10px;">Built by Vrushank Soni — Data Analyst &amp; Digital Marketer.</p></footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="../main.js" defer></script>
 </body>
 </html>
