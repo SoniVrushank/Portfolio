@@ -1,0 +1,114 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Customer Churn — Overview</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;}
+  body{width:1280px;height:720px;background:#0C1017;color:#F1F5F9;overflow:hidden;}
+  .rail{position:absolute;left:0;top:0;width:80px;height:720px;background:#070A0F;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:24px;}
+  .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#F43F5E,#FB7185);display:flex;align-items:center;justify-content:center;font-size:20px;}
+  .nav{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;color:#64748B;}
+  .nav.active{background:#1F2733;color:#FB7185;}
+  .canvas{position:absolute;left:80px;top:0;width:1200px;height:720px;padding:16px;}
+  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .header h1{font-size:20px;font-weight:600;} .header h1 span{color:#FB7185;}
+  .header .sub{color:#64748B;font-size:12px;}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px;}
+  .kpi{background:#151B26;border:1px solid #1F2733;border-radius:12px;padding:13px 15px;}
+  .kpi .label{color:#94A3B8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;}
+  .kpi .val{font-size:26px;font-weight:700;color:#F43F5E;margin-top:5px;}
+  .kpi .val.white{color:#F1F5F9;} .kpi .val.green{color:#34D399;}
+  .grid{display:grid;grid-template-columns:1fr 1.3fr 1.3fr;gap:12px;height:250px;margin-bottom:14px;}
+  .card{background:#151B26;border:1px solid #1F2733;border-radius:12px;padding:14px;}
+  .card h3{font-size:13px;font-weight:600;margin-bottom:12px;} .card h3 .muted{color:#64748B;font-weight:400;font-size:11px;}
+  .legend{font-size:11px;color:#94A3B8;} .legend div{display:flex;align-items:center;gap:6px;margin-bottom:7px;} .dot{width:9px;height:9px;border-radius:2px;}
+  .drv{font-size:11px;} .drv .cr{margin-bottom:13px;}
+  .drv .top{display:flex;justify-content:space-between;color:#cbd5e1;margin-bottom:4px;} .drv .top b{color:#F1F5F9;}
+  .track{height:9px;background:#1F2733;border-radius:4px;overflow:hidden;} .fill{height:100%;border-radius:4px;}
+  .curve-row{display:flex;align-items:flex-end;gap:22px;height:150px;padding:0 12px;}
+  .cc{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .cb{width:50px;border-radius:5px 5px 0 0;} .cl{font-size:10px;color:#94A3B8;margin-top:6px;} .cv{font-size:11px;font-weight:600;margin-bottom:4px;}
+  .row2{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;height:178px;}
+  .cmp{display:flex;gap:10px;margin-top:6px;}
+  .cmp .col{flex:1;background:#0C1017;border:1px solid #1F2733;border-radius:8px;padding:10px;text-align:center;}
+  .cmp .col .t{font-size:10px;color:#94A3B8;text-transform:uppercase;} .cmp .col .churn{color:#F43F5E;font-size:19px;font-weight:700;} .cmp .col .ret{color:#34D399;font-size:19px;font-weight:700;}
+  .chip{display:inline-block;background:#1F2733;color:#cbd5e1;font-size:11px;padding:4px 9px;border-radius:12px;margin:0 5px 5px 0;} .chip.on{background:#F43F5E;color:#fff;font-weight:600;}
+  .st{font-size:10px;color:#64748B;text-transform:uppercase;margin-bottom:6px;letter-spacing:.4px;}
+</style></head>
+<body>
+  <div class="rail">
+    <div class="logo">↻</div>
+    <div class="nav active">📉</div><div class="nav">🔍</div><div class="nav">🎯</div>
+    <div class="nav" style="margin-top:auto;margin-bottom:20px;">⟳</div>
+  </div>
+  <div class="canvas">
+    <div class="header">
+      <div><h1>Customer Churn — <span>All Plans</span></h1></div>
+      <div class="sub">7,500 customers • snapshot Jun 2025 • 3 plans • 4 contracts</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Churn Rate</div><div class="val">28.5%</div></div>
+      <div class="kpi"><div class="label">Retention Rate</div><div class="val green">71.5%</div></div>
+      <div class="kpi"><div class="label">Customers</div><div class="val white">7,500</div></div>
+      <div class="kpi"><div class="label">Avg CLV</div><div class="val white">$1,225</div></div>
+      <div class="kpi"><div class="label">Monthly Rev at Risk</div><div class="val">$115K</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Churned vs Retained</h3>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <svg width="118" height="118" viewBox="0 0 42 42">
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#1F2733" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#34D399" stroke-width="6" stroke-dasharray="71.5 28.5" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#F43F5E" stroke-width="6" stroke-dasharray="28.5 71.5" stroke-dashoffset="-71.5" transform="rotate(-90 21 21)"/>
+            <text x="21" y="20" fill="#F1F5F9" font-size="5" text-anchor="middle" font-weight="bold">7,500</text>
+            <text x="21" y="25" fill="#64748B" font-size="2.6" text-anchor="middle">customers</text>
+          </svg>
+          <div class="legend">
+            <div><span class="dot" style="background:#34D399"></span>Retained · 71.5%</div>
+            <div><span class="dot" style="background:#F43F5E"></span>Churned · 28.5%</div>
+            <div style="margin-top:8px;color:#64748B;">2,135 lost customers</div>
+          </div>
+        </div>
+      </div>
+      <div class="card drv">
+        <h3>Churn by Contract <span class="muted">— top driver</span></h3>
+        <div class="cr"><div class="top"><span>Month-to-Month</span><b style="color:#F43F5E">41.3%</b></div><div class="track"><div class="fill" style="width:100%;background:#F43F5E"></div></div></div>
+        <div class="cr"><div class="top"><span>One Year</span><b style="color:#FBBF24">15.6%</b></div><div class="track"><div class="fill" style="width:38%;background:#FBBF24"></div></div></div>
+        <div class="cr"><div class="top"><span>Two Year</span><b style="color:#34D399">8.0%</b></div><div class="track"><div class="fill" style="width:19%;background:#34D399"></div></div></div>
+        <div style="margin-top:10px;font-size:10.5px;color:#64748B;border-top:1px solid #1F2733;padding-top:9px;">Month-to-Month churns <b style="color:#F43F5E">5× more</b> than Two-Year</div>
+      </div>
+      <div class="card">
+        <h3>Retention Curve <span class="muted">— churn % by tenure</span></h3>
+        <div class="curve-row">
+          <div class="cc"><div class="cv" style="color:#F43F5E">38.0%</div><div class="cb" style="height:100%;background:#F43F5E"></div><div class="cl">0–12mo</div></div>
+          <div class="cc"><div class="cv" style="color:#FB7185">31.3%</div><div class="cb" style="height:82%;background:#FB7185"></div><div class="cl">13–24mo</div></div>
+          <div class="cc"><div class="cv" style="color:#FBBF24">23.1%</div><div class="cb" style="height:61%;background:#FBBF24"></div><div class="cl">25–48mo</div></div>
+          <div class="cc"><div class="cv" style="color:#34D399">13.5%</div><div class="cb" style="height:36%;background:#34D399"></div><div class="cl">49+mo</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="card">
+        <h3>Churned vs Retained Profile <span class="muted">— retention factors</span></h3>
+        <div class="cmp">
+          <div class="col"><div class="t">Satisfaction</div><span class="churn">5.6</span> <span style="color:#64748B">/</span> <span class="ret">6.5</span></div>
+          <div class="col"><div class="t">Complaints</div><span class="churn">0.95</span> <span style="color:#64748B">/</span> <span class="ret">0.47</span></div>
+          <div class="col"><div class="t">Tickets</div><span class="churn">3.3</span> <span style="color:#64748B">/</span> <span class="ret">2.5</span></div>
+          <div class="col"><div class="t">Tenure (mo)</div><span class="churn">19.9</span> <span style="color:#64748B">/</span> <span class="ret">26.9</span></div>
+        </div>
+        <div style="margin-top:12px;font-size:10px;color:#64748B;text-align:center;">
+          <span style="color:#F43F5E">■ Churned</span> &nbsp; <span style="color:#34D399">■ Retained</span> &nbsp;•&nbsp; churned customers complain 2× as often
+        </div>
+      </div>
+      <div class="card">
+        <h3>Filters</h3>
+        <div style="display:flex;gap:14px;">
+          <div><div class="st">Subscription</div><span class="chip on">Basic</span><span class="chip on">Standard</span><span class="chip on">Premium</span></div>
+          <div><div class="st">Contract</div><span class="chip on">Month-to-Month</span><span class="chip">One Year</span><span class="chip">Two Year</span></div>
+        </div>
+        <div style="margin-top:12px;font-size:10.5px;color:#64748B;border-top:1px solid #1F2733;padding-top:10px;">
+          Highest-churn payment <b style="color:#F43F5E">Electronic Check</b> (32.5%) &nbsp;•&nbsp; High-risk segment <b style="color:#F43F5E">259</b> at 74.9% churn
+        </div>
+      </div>
+    </div>
+  </div>
+</body></html>

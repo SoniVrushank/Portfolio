@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vrushanksoni.netlify.app/sitemap.xml

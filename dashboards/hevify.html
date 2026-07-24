@@ -1,0 +1,118 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hevify Website Analytics — Overview</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;}
+  body{width:1280px;height:720px;background:#0A0F14;color:#E8EDF2;overflow:hidden;}
+  .rail{position:absolute;left:0;top:0;width:80px;height:720px;background:#05080B;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:24px;}
+  .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#22D3EE,#34D399);display:flex;align-items:center;justify-content:center;font-size:20px;color:#05080B;font-weight:bold;}
+  .nav{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;color:#64748B;}
+  .nav.active{background:#1C2731;color:#22D3EE;}
+  .canvas{position:absolute;left:80px;top:0;width:1200px;height:720px;padding:16px;}
+  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .header h1{font-size:20px;font-weight:600;} .header h1 span{color:#22D3EE;}
+  .header .sub{color:#64748B;font-size:12px;}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px;}
+  .kpi{background:#121A22;border:1px solid #1C2731;border-radius:12px;padding:13px 15px;}
+  .kpi .label{color:#94A3B8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;}
+  .kpi .val{font-size:26px;font-weight:700;color:#22D3EE;margin-top:5px;}
+  .kpi .val.white{color:#E8EDF2;} .kpi .val.green{color:#34D399;} .kpi .val.amber{color:#FBBF24;}
+  .grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:12px;height:250px;margin-bottom:14px;}
+  .card{background:#121A22;border:1px solid #1C2731;border-radius:12px;padding:14px;}
+  .card h3{font-size:13px;font-weight:600;margin-bottom:12px;} .card h3 .muted{color:#64748B;font-weight:400;font-size:11px;}
+  .legend{font-size:11px;color:#94A3B8;} .legend div{display:flex;align-items:center;gap:6px;margin-bottom:6px;} .dot{width:9px;height:9px;border-radius:2px;}
+  .kw{font-size:11px;} .kw .cr{margin-bottom:10px;}
+  .kw .top{display:flex;justify-content:space-between;color:#cbd5e1;margin-bottom:3px;} .kw .top b{color:#E8EDF2;}
+  .kw .top .pos{color:#64748B;font-size:10px;}
+  .track{height:8px;background:#1C2731;border-radius:4px;overflow:hidden;} .fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#0891B2,#22D3EE);}
+  .row2{display:grid;grid-template-columns:1.5fr 1fr;gap:12px;height:178px;}
+  .pg{font-size:11px;}
+  .pg table{width:100%;border-collapse:collapse;} .pg td,.pg th{padding:5px 4px;text-align:right;color:#cbd5e1;}
+  .pg th{color:#64748B;font-size:10px;text-transform:uppercase;border-bottom:1px solid #1C2731;font-weight:500;}
+  .pg td:first-child,.pg th:first-child{text-align:left;color:#E8EDF2;font-family:monospace;font-size:10.5px;}
+  .chip{display:inline-block;background:#1C2731;color:#cbd5e1;font-size:11px;padding:4px 9px;border-radius:12px;margin:0 5px 5px 0;} .chip.on{background:#22D3EE;color:#05080B;font-weight:600;}
+  .st{font-size:10px;color:#64748B;text-transform:uppercase;margin-bottom:6px;letter-spacing:.4px;}
+</style></head>
+<body>
+  <div class="rail">
+    <div class="logo">H</div>
+    <div class="nav active">🌐</div><div class="nav">🔎</div><div class="nav">📄</div>
+    <div class="nav" style="margin-top:auto;margin-bottom:20px;">⟳</div>
+  </div>
+  <div class="canvas">
+    <div class="header">
+      <div><h1>Website Analytics — <span>All Channels</span></h1></div>
+      <div class="sub">Hevify • 575K sessions • Jan 2024 – Jun 2025 • GA + Search Console</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Sessions</div><div class="val">575.2K</div></div>
+      <div class="kpi"><div class="label">Organic Traffic</div><div class="val green">48%</div></div>
+      <div class="kpi"><div class="label">Avg Position</div><div class="val white">8.5</div></div>
+      <div class="kpi"><div class="label">Organic CTR</div><div class="val white">9.96%</div></div>
+      <div class="kpi"><div class="label">Conversion Rate</div><div class="val amber">3.02%</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Sessions Trend <span class="muted">— total vs organic</span></h3>
+        <svg width="560" height="190" viewBox="0 0 560 190">
+          <line x1="0" y1="40" x2="560" y2="40" stroke="#1C2731"/><line x1="0" y1="90" x2="560" y2="90" stroke="#1C2731"/><line x1="0" y1="140" x2="560" y2="140" stroke="#1C2731"/>
+          <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity=".28"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/></linearGradient></defs>
+          <polygon points="15,110 70,105 125,112 180,90 235,95 290,78 345,82 400,62 455,68 510,48 545,44 545,175 15,175" fill="url(#sg)"/>
+          <polyline points="15,110 70,105 125,112 180,90 235,95 290,78 345,82 400,62 455,68 510,48 545,44" fill="none" stroke="#22D3EE" stroke-width="3"/>
+          <polyline points="15,140 70,137 125,141 180,128 235,131 290,120 345,123 400,110 455,114 510,100 545,97" fill="none" stroke="#34D399" stroke-width="2.5"/>
+          <text x="30" y="24" fill="#22D3EE" font-size="10">● Total</text><text x="95" y="24" fill="#34D399" font-size="10">● Organic</text>
+          <text x="15" y="189" fill="#64748B" font-size="9">Jan'24</text><text x="290" y="189" fill="#64748B" font-size="9">Jan'25</text>
+        </svg>
+      </div>
+      <div class="card">
+        <h3>Channel Mix</h3>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="112" height="112" viewBox="0 0 42 42">
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#1C2731" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#22D3EE" stroke-width="6" stroke-dasharray="48 52" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#818CF8" stroke-width="6" stroke-dasharray="19 81" stroke-dashoffset="-48" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#34D399" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="-67" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#FBBF24" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="-77" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#38BDF8" stroke-width="6" stroke-dasharray="13 87" stroke-dashoffset="-87" transform="rotate(-90 21 21)"/>
+          </svg>
+          <div class="legend">
+            <div><span class="dot" style="background:#22D3EE"></span>Organic · 48%</div>
+            <div><span class="dot" style="background:#818CF8"></span>Direct · 19%</div>
+            <div><span class="dot" style="background:#34D399"></span>Social · 10%</div>
+            <div><span class="dot" style="background:#FBBF24"></span>Referral · 10%</div>
+            <div><span class="dot" style="background:#38BDF8"></span>Paid/Email · 14%</div>
+          </div>
+        </div>
+      </div>
+      <div class="card kw">
+        <h3>Top Keywords <span class="muted">— clicks</span></h3>
+        <div class="cr"><div class="top"><span>hevify analytics <span class="pos">pos 5.9</span></span><b>30.8K</b></div><div class="track"><div class="fill" style="width:100%"></div></div></div>
+        <div class="cr"><div class="top"><span>hevify <span class="pos">pos 5.2</span></span><b>29.0K</b></div><div class="track"><div class="fill" style="width:94%"></div></div></div>
+        <div class="cr"><div class="top"><span>hevify pricing <span class="pos">pos 6.2</span></span><b>27.3K</b></div><div class="track"><div class="fill" style="width:89%"></div></div></div>
+        <div class="cr"><div class="top"><span>power bi tutorial <span class="pos">pos 6.9</span></span><b>26.7K</b></div><div class="track"><div class="fill" style="width:87%"></div></div></div>
+        <div class="cr"><div class="top"><span>dashboard design <span class="pos">pos 7.2</span></span><b>26.1K</b></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="card pg">
+        <h3>Top Landing Pages <span class="muted">— traffic vs conversion</span></h3>
+        <table>
+          <tr><th>Page</th><th>Sessions</th><th>Conv</th><th>Conv %</th><th>Bounce</th></tr>
+          <tr><td>/</td><td>60,105</td><td>1,399</td><td>2.3%</td><td style="color:#FBBF24">48%</td></tr>
+          <tr><td>/blog/seo-guide</td><td>59,592</td><td>783</td><td>1.3%</td><td style="color:#F43F5E">62%</td></tr>
+          <tr><td>/blog/power-bi-tutorial</td><td>53,087</td><td>886</td><td>1.7%</td><td style="color:#F43F5E">58%</td></tr>
+          <tr><td>/pricing</td><td>38,793</td><td style="color:#34D399">2,662</td><td style="color:#34D399">6.9%</td><td style="color:#34D399">35%</td></tr>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Filters</h3>
+        <div style="display:flex;gap:14px;">
+          <div><div class="st">Channel</div><span class="chip on">Organic</span><span class="chip on">Direct</span><span class="chip">Paid</span><span class="chip">Social</span></div>
+          <div><div class="st">Device</div><span class="chip on">Mobile</span><span class="chip">Desktop</span><span class="chip">Tablet</span></div>
+        </div>
+        <div style="margin-top:12px;font-size:10.5px;color:#64748B;border-top:1px solid #1C2731;padding-top:10px;">
+          Top page <b style="color:#22D3EE">/</b> (60K) &nbsp;•&nbsp; Best converter <b style="color:#34D399">/pricing</b> (6.9%) &nbsp;•&nbsp; Mobile <b style="color:#E8EDF2">54%</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</body></html>

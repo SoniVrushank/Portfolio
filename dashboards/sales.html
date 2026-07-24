@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Retail Sales — Executive Summary</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;}
+  body{width:1280px;height:720px;background:#0B1220;color:#F1F5F9;overflow:hidden;}
+  .rail{position:absolute;left:0;top:0;width:80px;height:720px;background:#060A14;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:24px;}
+  .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#2DD4BF,#38BDF8);display:flex;align-items:center;justify-content:center;font-size:20px;color:#06121a;font-weight:bold;}
+  .nav{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;color:#64748B;}
+  .nav.active{background:#1E293B;color:#2DD4BF;}
+  .canvas{position:absolute;left:80px;top:0;width:1200px;height:720px;padding:16px;}
+  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+  .header h1{font-size:20px;font-weight:600;}
+  .header h1 span{color:#2DD4BF;}
+  .header .sub{color:#64748B;font-size:12px;}
+  .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px;}
+  .kpi{background:#141C2E;border:1px solid #1E293B;border-radius:12px;padding:13px 15px;}
+  .kpi .label{color:#94A3B8;font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;}
+  .kpi .val{font-size:26px;font-weight:700;color:#2DD4BF;margin-top:5px;}
+  .kpi .val.white{color:#F1F5F9;}
+  .kpi .delta{font-size:10.5px;margin-top:4px;}
+  .up{color:#34D399;}.down{color:#FB7185;}
+  .grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:12px;height:250px;margin-bottom:14px;}
+  .card{background:#141C2E;border:1px solid #1E293B;border-radius:12px;padding:14px;}
+  .card h3{font-size:13px;font-weight:600;margin-bottom:12px;}
+  .card h3 .muted{color:#64748B;font-weight:400;font-size:11px;}
+  .legend{font-size:11px;color:#94A3B8;}
+  .legend div{display:flex;align-items:center;gap:6px;margin-bottom:7px;}
+  .dot{width:9px;height:9px;border-radius:2px;}
+  .cat{font-size:11px;}
+  .cat .cr{margin-bottom:11px;}
+  .cat .top{display:flex;justify-content:space-between;color:#cbd5e1;margin-bottom:4px;}
+  .cat .top b{color:#F1F5F9;}
+  .track{height:8px;background:#1E293B;border-radius:4px;overflow:hidden;}
+  .fill{height:100%;border-radius:4px;}
+  .row2{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;height:180px;}
+  .disc-row{display:flex;align-items:flex-end;gap:24px;height:120px;padding:0 10px;margin-top:6px;}
+  .disc-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;}
+  .disc-bar{width:46px;border-radius:5px 5px 0 0;}
+  .disc-lbl{font-size:10px;color:#94A3B8;margin-top:6px;}
+  .disc-m{font-size:11px;font-weight:600;margin-bottom:4px;}
+  .slicers{display:flex;gap:10px;margin-top:6px;}
+  .st{font-size:10px;color:#64748B;text-transform:uppercase;margin-bottom:6px;letter-spacing:.5px;}
+  .chip{display:inline-block;background:#1E293B;color:#cbd5e1;font-size:11px;padding:4px 9px;border-radius:12px;margin:0 5px 5px 0;}
+  .chip.on{background:#2DD4BF;color:#06121a;font-weight:600;}
+</style></head>
+<body>
+  <div class="rail">
+    <div class="logo">◧</div>
+    <div class="nav active">▤</div><div class="nav">📦</div><div class="nav">🌎</div>
+    <div class="nav" style="margin-top:auto;margin-bottom:20px;">⟳</div>
+  </div>
+  <div class="canvas">
+    <div class="header">
+      <div><h1>Sales Performance — <span>All Years</span></h1></div>
+      <div class="sub">8,000 orders • Jan 2023 – Jun 2025 • 22 products • 5 regions</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="label">Revenue</div><div class="val">$3.68M</div><div class="delta up">▲ 12.0% YoY</div></div>
+      <div class="kpi"><div class="label">Profit</div><div class="val">$618K</div><div class="delta up">▲ 9.4% YoY</div></div>
+      <div class="kpi"><div class="label">Orders</div><div class="val white">8,000</div><div class="delta up">▲ 6.1%</div></div>
+      <div class="kpi"><div class="label">Avg Order Value</div><div class="val white">$460</div><div class="delta up">▲ $18</div></div>
+      <div class="kpi"><div class="label">Profit Margin</div><div class="val white">16.8%</div><div class="delta down">▼ 221 loss orders</div></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Revenue &amp; 3-Month Forecast <span class="muted">— by month</span></h3>
+        <svg width="560" height="190" viewBox="0 0 560 190">
+          <line x1="0" y1="40" x2="560" y2="40" stroke="#1E293B"/>
+          <line x1="0" y1="90" x2="560" y2="90" stroke="#1E293B"/>
+          <line x1="0" y1="140" x2="560" y2="140" stroke="#1E293B"/>
+          <defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2DD4BF" stop-opacity=".28"/><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/></linearGradient></defs>
+          <polyline points="10,130 60,120 110,135 160,100 210,110 260,80 310,95 360,60 410,75 450,55" fill="none" stroke="#2DD4BF" stroke-width="3"/>
+          <polygon points="10,130 60,120 110,135 160,100 210,110 260,80 310,95 360,60 410,75 450,55 450,175 10,175" fill="url(#rg)"/>
+          <polyline points="450,55 490,50 525,42 555,38" fill="none" stroke="#38BDF8" stroke-width="3" stroke-dasharray="5 4"/>
+          <rect x="450" y="20" width="105" height="150" fill="#38BDF8" opacity="0.06"/>
+          <text x="500" y="34" fill="#38BDF8" font-size="10" text-anchor="middle">forecast</text>
+          <text x="10" y="188" fill="#64748B" font-size="9">Jan'23</text>
+          <text x="260" y="188" fill="#64748B" font-size="9">Jan'24</text>
+          <text x="450" y="188" fill="#64748B" font-size="9">Jan'25</text>
+        </svg>
+      </div>
+      <div class="card cat">
+        <h3>Profit by Category</h3>
+        <div class="cr"><div class="top"><span>Technology</span><b>$295K</b></div><div class="track"><div class="fill" style="width:100%;background:#2DD4BF"></div></div></div>
+        <div class="cr"><div class="top"><span>Furniture</span><b>$242K</b></div><div class="track"><div class="fill" style="width:82%;background:#38BDF8"></div></div></div>
+        <div class="cr"><div class="top"><span>Office Supplies</span><b>$81K</b></div><div class="track"><div class="fill" style="width:27%;background:#818CF8"></div></div></div>
+        <div style="margin-top:14px;font-size:10.5px;color:#64748B;border-top:1px solid #1E293B;padding-top:10px;">
+          Technology margin <b style="color:#34D399">30%</b> vs Furniture <b style="color:#FBBF24">10%</b>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Revenue by Segment</h3>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <svg width="120" height="120" viewBox="0 0 42 42">
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#1E293B" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#2DD4BF" stroke-width="6" stroke-dasharray="45 55" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#38BDF8" stroke-width="6" stroke-dasharray="41 59" stroke-dashoffset="-45" transform="rotate(-90 21 21)"/>
+            <circle cx="21" cy="21" r="15.9" fill="transparent" stroke="#818CF8" stroke-width="6" stroke-dasharray="14 86" stroke-dashoffset="-86" transform="rotate(-90 21 21)"/>
+            <text x="21" y="20" fill="#F1F5F9" font-size="4.5" text-anchor="middle" font-weight="bold">$3.68M</text>
+            <text x="21" y="25" fill="#64748B" font-size="2.6" text-anchor="middle">revenue</text>
+          </svg>
+          <div class="legend">
+            <div><span class="dot" style="background:#2DD4BF"></span>Corporate · 45%</div>
+            <div><span class="dot" style="background:#38BDF8"></span>Consumer · 41%</div>
+            <div><span class="dot" style="background:#818CF8"></span>Home Office · 14%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="card">
+        <h3>Discount Impact on Margin <span class="muted">— optimise discounts</span></h3>
+        <div class="disc-row">
+          <div class="disc-col"><div class="disc-m" style="color:#34D399">24.6%</div><div class="disc-bar" style="height:90%;background:#34D399"></div><div class="disc-lbl">0%</div></div>
+          <div class="disc-col"><div class="disc-m" style="color:#34D399">17.8%</div><div class="disc-bar" style="height:66%;background:#2DD4BF"></div><div class="disc-lbl">1–10%</div></div>
+          <div class="disc-col"><div class="disc-m" style="color:#FBBF24">8.6%</div><div class="disc-bar" style="height:34%;background:#FBBF24"></div><div class="disc-lbl">11–20%</div></div>
+          <div class="disc-col"><div class="disc-m" style="color:#FB7185">−10.5%</div><div class="disc-bar" style="height:24%;background:#FB7185"></div><div class="disc-lbl">21%+</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Filters</h3>
+        <div class="slicers">
+          <div><div class="st">Year</div><span class="chip on">2023</span><span class="chip on">2024</span><span class="chip on">2025</span></div>
+          <div><div class="st">Region</div><span class="chip on">West</span><span class="chip">East</span><span class="chip">Central</span><span class="chip">South</span><span class="chip">North</span></div>
+        </div>
+        <div style="margin-top:12px;font-size:10.5px;color:#64748B;border-top:1px solid #1E293B;padding-top:10px;">
+          Top region <b style="color:#2DD4BF">West</b> ($168K profit) &nbsp;•&nbsp; Best rep <b style="color:#2DD4BF">Aisha Khan</b> ($68K)
+        </div>
+      </div>
+    </div>
+  </div>
+</body></html>
